@@ -12,19 +12,19 @@ colors:
   peach: "#f2dcd0"
 typography:
   display:
-    fontFamily: "Lora, Georgia, serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "clamp(42px, 5vw, 68px)"
     fontWeight: "700"
     lineHeight: "1.1"
     letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Lora, Georgia, serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "clamp(34px, 3.7vw, 50px)"
     fontWeight: "700"
     lineHeight: "1.15"
     letterSpacing: "-0.025em"
   title:
-    fontFamily: "Manrope, Segoe UI, sans-serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "21px"
     fontWeight: "700"
     lineHeight: "1.3"
@@ -99,9 +99,9 @@ components:
 
 ## Typography
 
-Lora (Georgia в резерве) — заголовки и логотип. Manrope (Segoe UI в резерве) — текст, поля, меню и кнопки. Оба основных шрифта локальные, с кириллицей.
+Nunito Sans (Segoe UI в резерве) — заголовки и текстовое название клиники. Manrope (Segoe UI в резерве) — текст, поля, меню и кнопки. Оба основных шрифта локальные, с кириллицей.
 
-Общая шкала находится в frontmatter. Первый экран имеет собственный диапазон (44–66px, интерлиньяж 1.08); на телефоне он уменьшен (36–56px). Заголовки услуг дополнительно адаптированы под длинные слова. Некоторые заголовки третьего уровня в группах, боковых блоках и документах используют Lora; названия отдельных услуг — Manrope.
+Общая шкала находится в frontmatter. Первый экран имеет собственный диапазон (44–66px, интерлиньяж 1.08); на телефоне он уменьшен (36–56px). Заголовки услуг дополнительно адаптированы под длинные слова. Заголовки всех уровней и названия услуг используют Nunito Sans; меню, кнопки, поля и контактная информация сохраняют Manrope.
 
 **Правило цельного заголовка.** Вес и масштаб создают иерархию; цветной градиент и декоративный курсив не требуются.
 

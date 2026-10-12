@@ -13,7 +13,7 @@
   --orange: #764636;
   --mint: #dce8e0;
   --peach: #f2dcd0;
-  --display: "Lora", Georgia, serif;
+  --display: "Nunito Sans", "Segoe UI", sans-serif;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --space-detail: 8px;
   --space-item: 24px;
@@ -97,6 +97,14 @@ h2,
 h3,
 p {
   margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--display);
 }
 h1,
 h2 {

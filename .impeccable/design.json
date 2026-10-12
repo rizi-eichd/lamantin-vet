@@ -120,11 +120,18 @@
     "typographyMeta": {
       "display": {
         "displayName": "Lora",
-        "purpose": "Основные заголовки с кириллицей."
+        "purpose": "Основные заголовки с кириллицей.",
+        "fontFamily": "Nunito Sans, Segoe UI, sans-serif"
       },
       "body": {
         "displayName": "Manrope",
         "purpose": "Текст и интерфейс."
+      },
+      "headline": {
+        "fontFamily": "Nunito Sans, Segoe UI, sans-serif"
+      },
+      "title": {
+        "fontFamily": "Nunito Sans, Segoe UI, sans-serif"
       }
     },
     "shadows": [],
@@ -162,7 +169,19 @@
         "name": "narrow",
         "value": "480px"
       }
-    ]
+    ],
+    "fontPairing": {
+      "display": "Nunito Sans, Segoe UI, sans-serif",
+      "body": "Manrope, Segoe UI, sans-serif",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "delivery": "Local Fontsource assets with Cyrillic and font-display: swap",
+      "authority": "User-supplied Manrope + Nunito Sans reference"
+    }
   },
   "components": [
     {
@@ -209,15 +228,15 @@
       "refersTo": "form-surface",
       "description": "Рабочая белая поверхность, не универсальная оболочка каждой секции.",
       "html": "<section class=\"ds-surface\"><h2>Заявка на приём</h2><p>Выберите услугу, укажите телефон и желаемое время.</p></section>",
-      "css": ".ds-surface{padding:36px;border-radius:16px;background:var(--paper,#fff);color:var(--ink,#2c5151);font:16px/1.65 var(--font-sans,Manrope,sans-serif)}.ds-surface h2{margin:0 0 24px;font:700 32px/1.15 var(--display,Lora,Georgia,serif);letter-spacing:-.025em}.ds-surface p{margin:0;color:var(--muted,#526763)}"
+      "css": ".ds-surface{padding:36px;border-radius:16px;background:var(--paper,#fff);color:var(--ink,#2c5151);font:16px/1.65 var(--font-sans,Manrope,sans-serif)}.ds-surface h2{margin:0 0 24px;font:700 32px/1.15 var(--display,\"Nunito Sans\",Segoe UI,sans-serif);letter-spacing:-.025em}.ds-surface p{margin:0;color:var(--muted,#526763)}"
     }
   ],
   "narrative": {
     "northStar": "Тёплый приём",
-    "overview": "Кремовая основа, плотная Lora, зелёный текст, каштановые действия и настоящие фотографии. Спокойный рабочий ритм формы и читаемых документов.",
+    "overview": "Кремовая основа, плотная Nunito Sans, зелёный текст, каштановые действия и настоящие фотографии. Спокойный рабочий ритм формы и читаемых документов.",
     "keyCharacteristics": [
       "Кремовая страница",
-      "Заголовки с засечками",
+      "Заголовки Nunito Sans",
       "Настоящие фотографии",
       "Открытые списки"
     ],

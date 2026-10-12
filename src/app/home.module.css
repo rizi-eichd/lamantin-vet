@@ -3,7 +3,6 @@
   --muted: #4d6258;
   --cream: #f7f5f0;
   --mint: #e4e9e2;
-  --display: "Manrope", "Segoe UI", sans-serif;
   background: var(--cream);
   color: var(--ink);
 }
@@ -38,7 +37,7 @@
 }
 .heroTitle {
   --title-tracking: -0.04em;
-  font-family: var(--font-sans);
+  font-family: var(--display);
   font-size: clamp(64px, 8.6vw, 126px);
   font-weight: 500;
   line-height: 1.02;

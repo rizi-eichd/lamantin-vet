@@ -1,6 +1,6 @@
 ---
 name: Здоровый питомец — homepage
-description: Forest photographic cover with locally hosted Manrope and real clinic photographs
+description: Forest photographic cover with Nunito Sans headings, Manrope body and real clinic photographs
 colors:
   forest: "#223f37"
   muted: "#4d6258"
@@ -21,25 +21,25 @@ colors:
   error: "#a12e2e"
 typography:
   display:
-    fontFamily: "Manrope, Segoe UI, sans-serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "clamp(64px, 8.6vw, 126px)"
     fontWeight: 500
     lineHeight: 1.02
     letterSpacing: "-0.04em"
   headline:
-    fontFamily: "Manrope, Segoe UI, sans-serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "clamp(34px, 3.8vw, 52px)"
     fontWeight: 500
     lineHeight: 1.12
     letterSpacing: "-0.035em"
   category:
-    fontFamily: "Manrope, Segoe UI, sans-serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "clamp(24px, 2.4vw, 34px)"
     fontWeight: 400
     lineHeight: 1.25
     letterSpacing: "-0.015em"
   title:
-    fontFamily: "Manrope, Segoe UI, sans-serif"
+    fontFamily: "Nunito Sans, Segoe UI, sans-serif"
     fontSize: "18px"
     fontWeight: 600
     lineHeight: 1.3
@@ -129,11 +129,11 @@ components:
 
 This metaphor and the descriptive color names are builder choices under the user's autonomous art-direction request, not user-approved wording. This record describes the shipped homepage content inside its scoped wrapper. The source of truth is `src/app/home.module.css`, its composition is `src/app/page.tsx`, and inherited control behavior comes from `src/app/globals.css`. The existing `DESIGN.md` and `.impeccable/design.json` continue to govern the shared header, footer and other routes.
 
-The homepage uses a forest cover, generous Manrope lettering and a rectangular photograph of the actual clinic's animals. Paper reading sections alternate with sage spreads. Thin rules organize services and practical information; authentic entrance and pharmacy photographs establish the place. Existing phrases, facts, source attribution and booking behavior remain binding product commitments from `PRODUCT.md`.
+The homepage uses a forest cover, generous Nunito Sans lettering and a rectangular photograph of the actual clinic's animals. Paper reading sections alternate with sage spreads. Thin rules organize services and practical information; authentic entrance and pharmacy photographs establish the place. Existing phrases, facts, source attribution and booking behavior remain binding product commitments from `PRODUCT.md`.
 
 **Key Characteristics:**
 
-- Large locally hosted Manrope lettering above a continuous photographic field.
+- Large locally hosted Nunito Sans lettering above a continuous photographic field.
 - Forest, paper and sage sections with flat surfaces and ruled lists.
 - Native disclosures, explicit booking confirmation and real clinic photographs.
 - One opening sequence pairs clinic-name tracking with the photo aperture; reduced motion presents both statically.
@@ -163,8 +163,8 @@ The homepage's forest and quiet pale surfaces form the dominant palette; inherit
 
 ## Typography
 
-**Display Font:** Manrope with Segoe UI and sans-serif fallbacks.
-**Body Font:** the same family. `src/app/layout.tsx` imports local Manrope weights 400, 500, 600 and 700.
+**Display Font:** Nunito Sans with Segoe UI and sans-serif fallbacks.
+**Body Font:** Manrope. `src/app/layout.tsx` imports local weights 400, 500, 600 and 700 for both families, including Cyrillic subsets.
 
 ### Hierarchy
 
@@ -175,7 +175,7 @@ The homepage's forest and quiet pale surfaces form the dominant palette; inherit
 - **Body:** inherited body is the frontmatter body role. Cover paragraphs use the cover-body role and a 58ch measure, changing to 14px at 760px. Clinic prose is 15px/1.8 with a 62ch measure, then 14px. Service descriptions are 13px with a 48ch measure, then 12px.
 - **Controls:** buttons retain the inherited 700 weight. Booking inputs are 15px, changing to 16px at 760px.
 
-**The Type Rule.** Keep the clinic-name and homepage section-heading roles in locally hosted Manrope; the inherited serif display system belongs to the other routes.
+**The Type Rule.** Use Nunito Sans for all heading levels and display lettering on every route. Use Manrope for prose, navigation, buttons, forms and contacts. This pairing follows the user’s font reference.
 
 ## Layout
 
@@ -224,7 +224,7 @@ Team and reviews use honest empty-data messages, not invented profile or testimo
 ### Do:
 
 - **Do** keep the forest cover, paper reading surface and sage spreads scoped to the homepage.
-- **Do** retain locally hosted Manrope, real clinic photographs, source attribution and existing copy.
+- **Do** retain locally hosted Nunito Sans and Manrope, real clinic photographs, source attribution and existing copy.
 - **Do** preserve native disclosures, visible keyboard focus and the static reduced-motion presentation.
 - **Do** preserve the clinic's confirmation requirement and the honest absence of published prices, hours, doctor profiles and verified reviews.
 
