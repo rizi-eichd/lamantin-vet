@@ -10,3 +10,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${clinic.siteUrl}/sitemap.xml`,
   };
 }
+export const dynamic = "force-static";

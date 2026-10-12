@@ -51,6 +51,14 @@ export function BookingForm({
   };
   const onSubmit = async (data: Booking) => {
     setNotice(null);
+    if (process.env.NEXT_PUBLIC_STATIC_HOSTING === "true") {
+      setNotice({
+        ok: false,
+        message:
+          "Онлайн-запись пока не подключена. Позвоните: +7 (900) 200-27-30.",
+      });
+      return;
+    }
     try {
       const r = await fetch("/api/booking", {
         method: "POST",

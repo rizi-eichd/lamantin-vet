@@ -1,25 +1,17 @@
-import Image from "next/image";
+import Image from "@/components/site-image";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
-import { BookingForm } from "@/components/booking-form";
+import { BookingQueryForm } from "@/components/booking-query-form";
 import { clinic } from "@/data/contacts";
-import { activeServices } from "@/data/services";
 export const metadata: Metadata = {
   title: "Заявка на приём",
   description:
     "Оставьте заявку в клинику Здоровый питомец в Первоуральске. Администратор подтвердит услугу, дату и время.",
   alternates: { canonical: "/booking" },
 };
-export default async function BookingPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ service?: string }>;
-}) {
-  const { service } = await searchParams;
-  const initialService = activeServices.some((s) => s.slug === service)
-    ? service
-    : "";
+export default function BookingPage() {
   return (
     <div className="container">
       <div className="page-intro">
@@ -73,7 +65,9 @@ export default async function BookingPage({
             />
           </div>
         </aside>
-        <BookingForm initialService={initialService} />
+        <Suspense fallback={<p role="status">Загрузка формы…</p>}>
+          <BookingQueryForm />
+        </Suspense>
       </div>
     </div>
   );

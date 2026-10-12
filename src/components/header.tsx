@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/site-image";
 import { Phone, ArrowUpRight } from "lucide-react";
 import { clinic } from "@/data/contacts";
 import { Button } from "./ui/button";
