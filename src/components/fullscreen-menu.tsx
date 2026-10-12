@@ -5,7 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import Image from "@/components/site-image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { clinic, navigation } from "@/data/contacts";
 import { animalPhotos } from "@/data/animal-photos";
 import { Button } from "./ui/button";
@@ -18,12 +18,9 @@ const photos = [
 ] as const;
 const linkPhotos = [0, 0, 2, 1, 1, 0, 1];
 
-function MenuIcon({ close = false }: { close?: boolean }) {
+function MenuIcon() {
   return (
-    <span
-      className={`${styles.icon} ${close ? styles.cross : ""}`}
-      aria-hidden="true"
-    >
+    <span className={styles.icon} aria-hidden="true">
       <span />
       <span />
     </span>
@@ -119,7 +116,7 @@ export function FullscreenMenu() {
                 aria-label="Закрыть меню"
               >
                 <span>Закрыть</span>
-                <MenuIcon close />
+                <X size={24} strokeWidth={1.8} aria-hidden="true" />
               </button>
             </Dialog.Close>
           </div>
