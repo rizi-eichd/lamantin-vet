@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { activeServices } from "@/data/services";
 import { clinic } from "@/data/contacts";
+import { animalPhotos, servicePhotos } from "@/data/animal-photos";
 import { prices } from "@/data/prices";
 import { Button } from "@/components/ui/button";
 import { ServiceIcon } from "@/components/service-icon";
@@ -41,6 +42,7 @@ export default async function ServicePage({
   const s = activeServices.find((s) => s.slug === slug);
   if (!s) notFound();
   const price = prices.find((p) => p.serviceSlug === slug)?.price;
+  const photo = servicePhotos[slug] ?? animalPhotos.consultation;
   return (
     <div className="container">
       <div className="page-intro service-intro">
@@ -59,8 +61,9 @@ export default async function ServicePage({
           </div>
           <div className="service-intro-photo">
             <Image
-              src="/images/pets.webp"
-              alt="Собака и кошка рядом — фото из карточки Здорового питомца"
+              src={photo.src}
+              alt={photo.alt}
+              style={{ objectPosition: photo.position }}
               fill
               priority
               sizes="(max-width:760px) 90vw, 45vw"

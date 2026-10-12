@@ -1,0 +1,418 @@
+[
+  {
+    "name": "hero-dog",
+    "author": "Rajesh S Balouria",
+    "source": "https://www.pexels.com/photo/golden-retriever-close-up-outdoors-in-summer-40009088/",
+    "original_url": "https://images.pexels.com/photos/40009088/pexels-photo-40009088.jpeg",
+    "original_width": 5192,
+    "original_height": 3850,
+    "camera_reported_by_source": "Nikon D3300",
+    "original_sha256": "85ee51259bbce24cde9d202786d161654c24a81f8fb53fcd55ba704e75a04c87",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.02,
+      "contrast": 1.01,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "hero-dog-768.webp",
+        "width": 768,
+        "height": 569,
+        "bytes": 95364
+      },
+      {
+        "file": "hero-dog-1280.webp",
+        "width": 1280,
+        "height": 949,
+        "bytes": 207852
+      },
+      {
+        "file": "hero-dog-1920.webp",
+        "width": 1920,
+        "height": 1424,
+        "bytes": 404722
+      },
+      {
+        "file": "hero-dog-2560.webp",
+        "width": 2560,
+        "height": 1898,
+        "bytes": 653456
+      },
+      {
+        "file": "hero-dog-4k.webp",
+        "width": 3840,
+        "height": 2847,
+        "bytes": 1144482
+      }
+    ]
+  },
+  {
+    "name": "booking-cat",
+    "author": "Pawan Sable",
+    "source": "https://www.pexels.com/photo/a-portrait-of-a-white-cat-12544682/",
+    "original_url": "https://images.pexels.com/photos/12544682/pexels-photo-12544682.jpeg",
+    "original_width": 4000,
+    "original_height": 6000,
+    "camera_reported_by_source": "Nikon D3500",
+    "original_sha256": "2df9293fd96331257c0bf6df8cd4672173c53f793b76b7ed449f32de4c2d9430",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.04,
+      "contrast": 1.01,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "booking-cat-768.webp",
+        "width": 768,
+        "height": 1152,
+        "bytes": 45532
+      },
+      {
+        "file": "booking-cat-1280.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 96638
+      },
+      {
+        "file": "booking-cat-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 180654
+      },
+      {
+        "file": "booking-cat-2560.webp",
+        "width": 2560,
+        "height": 3840,
+        "bytes": 299204
+      },
+      {
+        "file": "booking-cat-4k.webp",
+        "width": 3840,
+        "height": 5760,
+        "bytes": 632276
+      }
+    ]
+  },
+  {
+    "name": "menu-dog",
+    "author": "Soham Kundu",
+    "source": "https://www.pexels.com/photo/profile-portrait-of-a-relaxed-indian-street-dog-37739680/",
+    "original_url": "https://images.pexels.com/photos/37739680/pexels-photo-37739680.jpeg",
+    "original_width": 6000,
+    "original_height": 4000,
+    "camera_reported_by_source": "Canon EOS R100",
+    "original_sha256": "909e2ca9e6c57a5636702db19075c13d05a7c4e940087241b4e4bcd0da19ae9b",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.0,
+      "contrast": 1.0,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "menu-dog-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 63450
+      },
+      {
+        "file": "menu-dog-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 156054
+      },
+      {
+        "file": "menu-dog-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 326634
+      },
+      {
+        "file": "menu-dog-2560.webp",
+        "width": 2560,
+        "height": 1707,
+        "bytes": 583778
+      },
+      {
+        "file": "menu-dog-4k.webp",
+        "width": 3840,
+        "height": 2560,
+        "bytes": 1611572
+      }
+    ]
+  },
+  {
+    "name": "consultation-dog",
+    "author": "Yogi Yogesh",
+    "source": "https://www.pexels.com/photo/close-up-portrait-of-a-black-and-white-dog-37356622/",
+    "original_url": "https://images.pexels.com/photos/37356622/pexels-photo-37356622.jpeg",
+    "original_width": 6000,
+    "original_height": 4000,
+    "camera_reported_by_source": "Canon EOS R100",
+    "original_sha256": "6340a3517b24a98584fbd22e86af25ff998fe73fcb85debec1c358574bb50c49",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.02,
+      "contrast": 1.01,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "consultation-dog-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 38784
+      },
+      {
+        "file": "consultation-dog-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 98320
+      },
+      {
+        "file": "consultation-dog-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 205594
+      },
+      {
+        "file": "consultation-dog-2560.webp",
+        "width": 2560,
+        "height": 1707,
+        "bytes": 343518
+      },
+      {
+        "file": "consultation-dog-4k.webp",
+        "width": 3840,
+        "height": 2560,
+        "bytes": 683620
+      }
+    ]
+  },
+  {
+    "name": "prevention-dog",
+    "author": "Dr Photographer",
+    "source": "https://www.pexels.com/photo/side-profile-of-a-white-dog-outdoors-36134304/",
+    "original_url": "https://images.pexels.com/photos/36134304/pexels-photo-36134304.jpeg",
+    "original_width": 6000,
+    "original_height": 4000,
+    "camera_reported_by_source": "Canon EOS 250D",
+    "original_sha256": "90af84db76af467fe59b23a722c3094dd73cb62f722c9c5f762c0bf3249d5812",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.02,
+      "contrast": 1.01,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "prevention-dog-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 50440
+      },
+      {
+        "file": "prevention-dog-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 117892
+      },
+      {
+        "file": "prevention-dog-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 235570
+      },
+      {
+        "file": "prevention-dog-2560.webp",
+        "width": 2560,
+        "height": 1707,
+        "bytes": 385952
+      },
+      {
+        "file": "prevention-dog-4k.webp",
+        "width": 3840,
+        "height": 2560,
+        "bytes": 746062
+      }
+    ]
+  },
+  {
+    "name": "diagnostic-cat",
+    "author": "Sarah MP",
+    "source": "https://www.pexels.com/photo/black-cat-staring-outside-the-window-8549656/",
+    "original_url": "https://images.pexels.com/photos/8549656/pexels-photo-8549656.jpeg",
+    "original_width": 6000,
+    "original_height": 4000,
+    "camera_reported_by_source": "Canon EOS 77D",
+    "original_sha256": "d942c4d4a62a68a7e0b2e1ab4c28abb7fdf41b47d598480314ec6d279eb4b81f",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.02,
+      "contrast": 1.01,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "diagnostic-cat-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 71554
+      },
+      {
+        "file": "diagnostic-cat-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 218356
+      },
+      {
+        "file": "diagnostic-cat-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 527534
+      },
+      {
+        "file": "diagnostic-cat-2560.webp",
+        "width": 2560,
+        "height": 1707,
+        "bytes": 959746
+      },
+      {
+        "file": "diagnostic-cat-4k.webp",
+        "width": 3840,
+        "height": 2560,
+        "bytes": 2101802
+      }
+    ]
+  },
+  {
+    "name": "resting-cat",
+    "author": "Ahnaf Piash",
+    "source": "https://www.pexels.com/photo/domestic-cat-sleeping-5800671/",
+    "original_url": "https://images.pexels.com/photos/5800671/pexels-photo-5800671.jpeg",
+    "original_width": 6000,
+    "original_height": 4000,
+    "camera_reported_by_source": "Sony ILCE-6100",
+    "original_sha256": "2b2caf675efa5b7bb5b86082f341b55fc588984773113bb914515189b524b3d2",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.03,
+      "contrast": 1.0,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "resting-cat-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 45028
+      },
+      {
+        "file": "resting-cat-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 98870
+      },
+      {
+        "file": "resting-cat-1920.webp",
+        "width": 1920,
+        "height": 1280,
+        "bytes": 204244
+      },
+      {
+        "file": "resting-cat-2560.webp",
+        "width": 2560,
+        "height": 1707,
+        "bytes": 381396
+      },
+      {
+        "file": "resting-cat-4k.webp",
+        "width": 3840,
+        "height": 2560,
+        "bytes": 987230
+      }
+    ]
+  },
+  {
+    "name": "portrait-cat",
+    "author": "Ludovic Delot",
+    "source": "https://www.pexels.com/photo/cute-cat-portrait-15479701/",
+    "original_url": "https://images.pexels.com/photos/15479701/pexels-photo-15479701.jpeg",
+    "original_width": 4000,
+    "original_height": 6000,
+    "camera_reported_by_source": "Canon EOS M50",
+    "original_sha256": "b94057750b52bf92526d61a984a5958cdbcebe435d5fdd02fef41a93a7ad8cb4",
+    "license": "https://www.pexels.com/license/",
+    "downloaded": "2026-10-12",
+    "processing": {
+      "brightness": 1.0,
+      "contrast": 1.01,
+      "resampling": "Lanczos downsampling only",
+      "sharpening": "UnsharpMask radius=0.6 percent=30 threshold=3",
+      "ai": false,
+      "upscaling": false
+    },
+    "variants": [
+      {
+        "file": "portrait-cat-768.webp",
+        "width": 768,
+        "height": 1152,
+        "bytes": 40992
+      },
+      {
+        "file": "portrait-cat-1280.webp",
+        "width": 1280,
+        "height": 1920,
+        "bytes": 92002
+      },
+      {
+        "file": "portrait-cat-1920.webp",
+        "width": 1920,
+        "height": 2880,
+        "bytes": 185952
+      },
+      {
+        "file": "portrait-cat-2560.webp",
+        "width": 2560,
+        "height": 3840,
+        "bytes": 318548
+      },
+      {
+        "file": "portrait-cat-4k.webp",
+        "width": 3840,
+        "height": 5760,
+        "bytes": 654112
+      }
+    ]
+  }
+]

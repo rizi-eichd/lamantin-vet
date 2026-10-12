@@ -1,14 +1,15 @@
 import { clinic } from "@/data/contacts";
+import { animalPhotos } from "@/data/animal-photos";
 export const sharedOpenGraph = {
   type: "website" as const,
   locale: "ru_RU",
   siteName: clinic.name,
   images: [
     {
-      url: "/images/pets.webp",
-      width: 960,
-      height: 1280,
-      alt: "Собака и кошка — фотография из карточки клиники",
+      url: animalPhotos.hero.src,
+      width: 3840,
+      height: 2847,
+      alt: animalPhotos.hero.alt,
     },
   ],
 };

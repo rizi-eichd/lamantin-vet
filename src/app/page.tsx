@@ -17,6 +17,7 @@ import {
   Quote,
 } from "lucide-react";
 import { clinic } from "@/data/contacts";
+import { animalPhotos } from "@/data/animal-photos";
 import { activeServices } from "@/data/services";
 import { doctors } from "@/data/team";
 import { reviews } from "@/data/reviews";
@@ -98,13 +99,16 @@ export default function Home() {
             <div className={styles.heroStage}>
               <figure className={styles.heroPhoto}>
                 <Image
-                  src="/images/pets.webp"
-                  alt="Собака и кошка рядом — фото из карточки Здорового питомца"
+                  src={animalPhotos.hero.src}
+                  alt={animalPhotos.hero.alt}
+                  style={{ objectPosition: animalPhotos.hero.position }}
                   fill
                   priority
                   sizes="(max-width:760px) 100vw, 90vw"
                 />
-                <figcaption>«Здоровый питомец» · Первоуральск</figcaption>
+                <figcaption>
+                  Фото: {animalPhotos.hero.author} / Pexels
+                </figcaption>
               </figure>
             </div>
             <div className={styles.heroText}>
@@ -123,8 +127,7 @@ export default function Home() {
                 </a>
               </div>
               <p className={styles.confirmation}>
-                После отправки заявки{" "}
-                <br />
+                После отправки заявки <br />
                 <strong>администратор согласует время приёма.</strong>
               </p>
             </div>
@@ -135,9 +138,12 @@ export default function Home() {
                   Клиника <strong>Береговая, 10А</strong>
                 </span>
               </a>
-              <a href={clinic.maps} target="_blank" rel="noopener noreferrer">
-                Фото из карточки клиники на Яндекс Картах{" "}
-                <ArrowUpRight size={14} />
+              <a
+                href={animalPhotos.hero.source}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Автор фотографии · Pexels <ArrowUpRight size={14} />
               </a>
               <span>ВЕТЕРИНАРНАЯ КЛИНИКА В ПЕРВОУРАЛЬСКЕ</span>
             </div>

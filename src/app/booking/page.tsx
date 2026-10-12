@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, Phone } from "lucide-react";
 import { BookingQueryForm } from "@/components/booking-query-form";
 import { clinic } from "@/data/contacts";
+import { animalPhotos } from "@/data/animal-photos";
 export const metadata: Metadata = {
   title: "Заявка на приём",
   description:
@@ -58,8 +59,9 @@ export default function BookingPage() {
           </a>
           <div className="booking-aside-photo">
             <Image
-              src="/images/pets.webp"
-              alt="Собака и кошка рядом — фото из карточки Здорового питомца"
+              src={animalPhotos.booking.src}
+              alt={animalPhotos.booking.alt}
+              style={{ objectPosition: animalPhotos.booking.position }}
               fill
               sizes="(max-width:760px) 90vw, 35vw"
             />

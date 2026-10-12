@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CookieNotice } from "@/components/cookie-notice";
 import { clinic } from "@/data/contacts";
+import { sharedOpenGraph } from "@/lib/seo";
 import "./globals.css";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
@@ -30,14 +31,7 @@ export const metadata: Metadata = {
     siteName: clinic.name,
     title: "Здоровый питомец — клиника в Первоуральске",
     description: "Ветеринарная помощь в Первоуральске. Береговая, 10А.",
-    images: [
-      {
-        url: "/images/pets.webp",
-        width: 960,
-        height: 1280,
-        alt: "Собака и кошка — фотография из карточки клиники",
-      },
-    ],
+    images: sharedOpenGraph.images,
   },
 };
 export default function RootLayout({

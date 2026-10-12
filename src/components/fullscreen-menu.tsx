@@ -7,10 +7,15 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { clinic, navigation } from "@/data/contacts";
+import { animalPhotos } from "@/data/animal-photos";
 import { Button } from "./ui/button";
 import styles from "./fullscreen-menu.module.css";
 
-const photos = ["pets", "entrance", "pharmacy"] as const;
+const photos = [
+  { src: animalPhotos.menu.src, position: animalPhotos.menu.position },
+  { src: "/images/entrance.webp", position: "50% 50%" },
+  { src: "/images/pharmacy.webp", position: "50% 50%" },
+] as const;
 const linkPhotos = [0, 0, 2, 1, 1, 0, 1];
 
 function MenuIcon({ close = false }: { close?: boolean }) {
@@ -138,8 +143,9 @@ export function FullscreenMenu() {
               <figure className={styles.photo} aria-hidden="true">
                 {photos.map((photo, index) => (
                   <Image
-                    key={photo}
-                    src={`/images/${photo}.webp`}
+                    key={photo.src}
+                    src={photo.src}
+                    style={{ objectPosition: photo.position }}
                     alt=""
                     fill
                     sizes="(max-width:760px) 1px, 42vw"
