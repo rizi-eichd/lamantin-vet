@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import Image from "@/components/site-image";
 import Link from "next/link";
@@ -18,6 +18,16 @@ const photos = [
 ] as const;
 const linkPhotos = [0, 0, 2, 1, 1, 0, 1];
 
+function readMenuViewport() {
+  const viewport = window.visualViewport;
+  return {
+    width: viewport?.width ?? window.innerWidth,
+    height: viewport?.height ?? window.innerHeight,
+    left: viewport?.offsetLeft ?? 0,
+    top: viewport?.offsetTop ?? 0,
+  };
+}
+
 function MenuIcon() {
   return (
     <span className={styles.icon} aria-hidden="true">
@@ -32,6 +42,23 @@ export function FullscreenMenu() {
   const pendingNavigation = useRef<string | null>(null);
   const [open, setOpen] = useState(false);
   const [activePhoto, setActivePhoto] = useState(0);
+  const [viewport, setViewport] = useState<ReturnType<
+    typeof readMenuViewport
+  > | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const updateViewport = () => setViewport(readMenuViewport());
+    const visibleViewport = window.visualViewport;
+    window.addEventListener("resize", updateViewport);
+    visibleViewport?.addEventListener("resize", updateViewport);
+    visibleViewport?.addEventListener("scroll", updateViewport);
+    return () => {
+      window.removeEventListener("resize", updateViewport);
+      visibleViewport?.removeEventListener("resize", updateViewport);
+      visibleViewport?.removeEventListener("scroll", updateViewport);
+    };
+  }, [open]);
 
   useEffect(
     () => () => {
@@ -42,6 +69,7 @@ export function FullscreenMenu() {
 
   function changeOpen(next: boolean) {
     if (next) {
+      setViewport(readMenuViewport());
       document.documentElement.style.setProperty(
         "--menu-origin-y",
         `${window.scrollY + window.innerHeight * 0.35}px`,
@@ -77,6 +105,17 @@ export function FullscreenMenu() {
         <Dialog.Content
           className={styles.panel}
           data-fullscreen-menu=""
+          data-compact={viewport && viewport.width <= 760 ? "true" : undefined}
+          style={
+            viewport
+              ? ({
+                  "--menu-view-width": `${viewport.width}px`,
+                  "--menu-view-height": `${viewport.height}px`,
+                  "--menu-view-left": `${viewport.left}px`,
+                  "--menu-view-top": `${viewport.top}px`,
+                } as CSSProperties)
+              : undefined
+          }
           onCloseAutoFocus={() => {
             // Route after the exit animation and scroll lock release, so anchor
             // positions are measured against the restored page.

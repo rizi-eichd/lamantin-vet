@@ -56,11 +56,16 @@
 }
 .panel {
   position: fixed;
-  inset: 0;
+  top: var(--menu-view-top, 0px);
+  left: var(--menu-view-left, 0px);
+  width: var(--menu-view-width, 100%);
   z-index: 90;
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  height: var(--menu-view-height, 100dvh);
+  min-width: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   overflow: hidden;
   background: #18382f;
   color: #f7f5f0;
@@ -130,6 +135,8 @@
   padding: 24px 6vw 48px;
   flex: 1;
   min-height: 0;
+  min-width: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-color: #8a9c8f #18382f;
@@ -260,50 +267,96 @@
   .trigger {
     margin-left: 0;
   }
-  .top {
-    gap: 12px;
-    padding: max(16px, env(safe-area-inset-top))
-      max(20px, env(safe-area-inset-right)) 16px
-      max(20px, env(safe-area-inset-left));
+}
+.panel[data-compact="true"] {
+  width: min(420px, calc(var(--menu-view-width, 100vw) - 24px));
+  height: min(720px, calc(var(--menu-view-height, 100dvh) - 24px));
+  left: calc(
+    var(--menu-view-left, 0px) +
+      (
+        var(--menu-view-width, 100vw) -
+          min(420px, calc(var(--menu-view-width, 100vw) - 24px))
+      ) /
+      2
+  );
+  top: calc(var(--menu-view-top, 0px) + 12px);
+  border: 1px solid #456056;
+  border-radius: 12px;
+  transform-origin: 50% 0;
+}
+.panel[data-compact="true"][data-state="open"] {
+  animation: compactMenuIn 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.panel[data-compact="true"][data-state="closed"] {
+  animation: compactMenuOut 160ms ease-in both;
+}
+.panel[data-compact="true"] .top {
+  gap: 12px;
+  padding: max(12px, env(safe-area-inset-top)) 16px 12px;
+}
+.panel[data-compact="true"] .close {
+  gap: 8px;
+  font-size: 13px;
+}
+.panel[data-compact="true"] .brand {
+  gap: 8px;
+  font-size: 13px;
+}
+.panel[data-compact="true"] .brand img {
+  width: 36px;
+}
+.panel[data-compact="true"] .brand small {
+  font-size: 7px;
+}
+.panel[data-compact="true"] .body {
+  display: block;
+  padding: 4px 16px max(20px, env(safe-area-inset-bottom));
+}
+.panel[data-compact="true"] .navigation a {
+  min-height: 44px;
+  padding-block: 3px;
+  font-size: 26px;
+}
+.panel[data-compact="true"] .navigation a > svg {
+  width: 20px;
+  height: 20px;
+}
+.panel[data-compact="true"] .aside {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #56786a;
+}
+.panel[data-compact="true"] .photo {
+  display: none;
+}
+.panel[data-compact="true"] .contact p {
+  font-size: 12px;
+}
+.panel[data-compact="true"] .actions {
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 12px;
+  gap: 6px;
+}
+.panel[data-compact="true"] .phone {
+  font-size: 20px;
+}
+@keyframes compactMenuIn {
+  from {
+    transform: translateY(18px);
   }
-  .close {
-    gap: 8px;
-    font-size: 13px;
+  to {
+    transform: none;
   }
-  .brand {
-    gap: 8px;
-    font-size: 14px;
+}
+@keyframes compactMenuOut {
+  from {
+    transform: none;
+    opacity: 1;
   }
-  .brand small {
-    font-size: 7px;
-  }
-  .body {
-    display: block;
-    padding: 16px 24px max(24px, env(safe-area-inset-bottom));
-  }
-  .navigation a {
-    min-height: 48px;
-    padding-block: 4px;
-    font-size: clamp(28px, 7.8vw, 42px);
-  }
-  .navigation a > svg {
-    width: 20px;
-    height: 20px;
-  }
-  .aside {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid #56786a;
-  }
-  .photo {
-    display: none;
-  }
-  .contact p {
-    font-size: 12px;
-  }
-  .actions {
-    margin-top: 16px;
-    gap: 8px 20px;
+  to {
+    transform: translateY(12px);
+    opacity: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
