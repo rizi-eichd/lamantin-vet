@@ -26,7 +26,7 @@ export default function CookiesPage() {
         <h2>Что сохраняется</h2>
         <p>
           После нажатия «Понятно» сохраняется cookie{" "}
-          <code>hp_cookie_notice</code> со значением <code>v1</code> на 180
+          <code>zp_cookie_notice</code> со значением <code>v1</code> на 180
           дней. В нём нет имени, телефона, сведений о питомце или содержимого
           заявки. Cookie действует на этом сайте.
         </p>

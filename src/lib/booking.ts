@@ -1,8 +1,9 @@
 import { z } from "zod";
 import { activeServices } from "../data/services";
+import { clinic } from "../data/contacts";
 export function localToday() {
   return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Yekaterinburg",
+    timeZone: clinic.timeZone,
     year: "numeric",
     month: "2-digit",
     day: "2-digit",

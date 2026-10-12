@@ -13,8 +13,8 @@ import styles from "./fullscreen-menu.module.css";
 
 const photos = [
   { src: animalPhotos.menu.src, position: animalPhotos.menu.position },
-  { src: "/images/entrance.webp", position: "50% 50%" },
-  { src: "/images/pharmacy.webp", position: "50% 50%" },
+  { src: "/images/zooprofi-entrance.webp", position: "50% 50%" },
+  { src: "/images/zooprofi-reception.webp", position: "50% 50%" },
 ] as const;
 const linkPhotos = [0, 0, 2, 1, 1, 0, 1];
 
@@ -126,7 +126,7 @@ export function FullscreenMenu() {
         >
           <Dialog.Title className="sr-only">Навигация по сайту</Dialog.Title>
           <Dialog.Description className="sr-only">
-            Ветеринарная клиника в Первоуральске
+            Ветеринарная клиника в Мытищах
           </Dialog.Description>
           <div className={styles.top}>
             <Dialog.Close asChild>
@@ -134,17 +134,18 @@ export function FullscreenMenu() {
                 href="/"
                 onNavigate={(event) => navigateAfterClose("/", event)}
                 className={styles.brand}
-                aria-label="Здоровый питомец — главная"
+                aria-label="Зоопрофи — главная"
               >
                 <Image
-                  src="/images/clinic-logo.png"
-                  width={917}
-                  height={911}
+                  src="/images/zooprofi-logo.png"
+                  width={748}
+                  height={748}
                   sizes="44px"
                   alt=""
                 />
                 <span>
-                  Здоровый питомец<small>ВЕТЕРИНАРНАЯ КЛИНИКА</small>
+                  {clinic.name}
+                  <small>ВЕТЕРИНАРНЫЙ ЦЕНТР</small>
                 </span>
               </Link>
             </Dialog.Close>
@@ -194,7 +195,7 @@ export function FullscreenMenu() {
                   {clinic.phone}
                 </a>
                 <p>
-                  {clinic.city}, {clinic.address}
+                  {clinic.city}, {clinic.address}, {clinic.floor}
                 </p>
                 <div className={styles.actions}>
                   <Dialog.Close asChild>

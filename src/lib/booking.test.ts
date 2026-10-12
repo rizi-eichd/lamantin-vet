@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { bookingSchema, formatPhone } from "./booking";
+import { describe, expect, it, vi } from "vitest";
+import { bookingSchema, formatPhone, localToday } from "./booking";
 import { handleBooking } from "./booking-handler";
 
 const valid = {
@@ -28,6 +28,15 @@ const deps = () => ({
   send: async () => new Response(JSON.stringify({ ok: true }), { status: 200 }),
 });
 describe("booking validation", () => {
+  it("uses the clinic's Moscow date near midnight", () => {
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date("2026-06-01T20:30:00Z"));
+      expect(localToday()).toBe("2026-06-01");
+    } finally {
+      vi.useRealTimers();
+    }
+  });
   it("accepts complete booking and normalizes Russian phone", () => {
     expect(bookingSchema.safeParse(valid).success).toBe(true);
     expect(formatPhone("89001234567")).toBe("+7 (900) 123-45-67");
@@ -46,6 +55,22 @@ describe("booking validation", () => {
   });
 });
 describe("delivery contract", () => {
+  it("uses the new clinic phone when delivery is unavailable", async () => {
+    const response = await handleBooking(request(), { ...deps(), token: "" });
+    expect((await response.json()).message).toContain("+7 (498) 602-97-93");
+  });
+  it("identifies Zooprofi and Moscow time in administrator notifications", async () => {
+    let message = "";
+    await handleBooking(request(), {
+      ...deps(),
+      send: async (_url, init) => {
+        message = JSON.parse(String(init.body)).text;
+        return new Response('{"ok":true}', { status: 200 });
+      },
+    });
+    expect(message).toContain("Новая заявка — Зоопрофи");
+    expect(message).toContain("(Москва)");
+  });
   it("returns unavailable without Telegram", async () => {
     const r = await handleBooking(request(), { ...deps(), token: "" });
     expect(r.status).toBe(503);

@@ -54,8 +54,7 @@ export function BookingForm({
     if (process.env.NEXT_PUBLIC_STATIC_HOSTING === "true") {
       setNotice({
         ok: false,
-        message:
-          "Онлайн-запись пока не подключена. Позвоните: +7 (900) 200-27-30.",
+        message: `Онлайн-запись пока не подключена. Позвоните: ${clinic.phone}.`,
       });
       return;
     }

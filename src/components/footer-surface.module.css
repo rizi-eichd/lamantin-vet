@@ -68,16 +68,9 @@
   -webkit-background-clip: text;
   color: transparent;
 }
-.wordmark span:last-child {
-  text-align: right;
-  font-size: clamp(62px, 19.4vw, 282px);
-}
 @supports (font-size: 1cqw) {
   .wordmark span {
     font-size: 19.2cqw;
-  }
-  .wordmark span:last-child {
-    font-size: 22.8cqw;
   }
 }
 .surface[data-revealed="true"] .wordmark {

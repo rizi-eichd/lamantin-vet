@@ -14,7 +14,7 @@ export function Footer() {
               <Logo />
               <p>
                 Ветеринарная клиника, ветаптека
-                <br />и зоотовары в Первоуральске.
+                <br />и зоотовары в Мытищах.
               </p>
             </div>
             <nav aria-label="Навигация в подвале">
@@ -27,7 +27,7 @@ export function Footer() {
             <div className="footer-contact">
               <a href={clinic.phoneHref}>{clinic.phone}</a>
               <p>
-                {clinic.city}, {clinic.address}
+                {clinic.city}, {clinic.address}, {clinic.floor}
               </p>
               <a href={clinic.maps} target="_blank" rel="noopener noreferrer">
                 Мы на Яндекс Картах <ArrowUpRight size={16} />
@@ -35,7 +35,7 @@ export function Footer() {
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Здоровый питомец</span>
+            <span>© {new Date().getFullYear()} Зоопрофи</span>
             <Link href="/privacy">Политика конфиденциальности</Link>
             <Link href="/consent">Обработка персональных данных</Link>
             <CookieSettings />

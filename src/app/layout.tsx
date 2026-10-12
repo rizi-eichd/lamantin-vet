@@ -16,11 +16,11 @@ import "@fontsource/nunito-sans/700.css";
 export const metadata: Metadata = {
   metadataBase: new URL(clinic.siteUrl),
   title: {
-    default: "Здоровый питомец — ветеринарная клиника в Первоуральске",
-    template: "%s | Здоровый питомец",
+    default: "Зоопрофи — ветеринарная клиника в Мытищах",
+    template: "%s | Зоопрофи",
   },
   description:
-    "Ветеринарная клиника, ветаптека и зоотовары в Первоуральске. Береговая, 10А. Узнайте об услугах и оставьте заявку на приём: +7 (900) 200-27-30.",
+    "Ветеринарная клиника, ветаптека и зоотовары в Мытищах. Троицкая, 9А. Узнайте об услугах и оставьте заявку на приём: +7 (498) 602-97-93.",
   robots: {
     index: process.env.SITE_INDEXABLE === "true",
     follow: process.env.SITE_INDEXABLE === "true",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: clinic.name,
-    title: "Здоровый питомец — клиника в Первоуральске",
-    description: "Ветеринарная помощь в Первоуральске. Береговая, 10А.",
+    title: "Зоопрофи — клиника в Мытищах",
+    description: "Ветеринарная помощь в Мытищах. Троицкая, 9А.",
     images: sharedOpenGraph.images,
   },
 };

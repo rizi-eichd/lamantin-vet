@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import styles from "./footer-surface.module.css";
+import { clinic } from "@/data/contacts";
 
 export function FooterSurface({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLElement>(null);
@@ -43,8 +44,7 @@ export function FooterSurface({ children }: { children: ReactNode }) {
       <div className={styles.light} aria-hidden="true" />
       {children}
       <div className={`container ${styles.wordmark}`} aria-hidden="true">
-        <span>Здоровый</span>
-        <span>питомец</span>
+        <span>{clinic.name}</span>
       </div>
     </footer>
   );

@@ -9,7 +9,7 @@ import { animalPhotos } from "@/data/animal-photos";
 export const metadata: Metadata = {
   title: "Заявка на приём",
   description:
-    "Оставьте заявку в клинику Здоровый питомец в Первоуральске. Администратор подтвердит услугу, дату и время.",
+    "Оставьте заявку в клинику Зоопрофи в Мытищах. Администратор подтвердит услугу, дату и время.",
   alternates: { canonical: "/booking" },
 };
 export default function BookingPage() {

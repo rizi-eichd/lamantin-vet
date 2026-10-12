@@ -1,5 +1,6 @@
 import { bookingSchema } from "./booking";
 import { activeServices } from "../data/services";
+import { clinic } from "../data/contacts";
 type Dependencies = {
   token?: string;
   chatId?: string;
@@ -65,17 +66,17 @@ export async function handleBooking(request: Request, deps: Dependencies) {
   if (!deps.token || !deps.chatId)
     return fail(
       503,
-      "Онлайн-запись пока не подключена. Позвоните: +7 (900) 200-27-30.",
+      `Онлайн-запись пока не подключена. Позвоните: ${clinic.phone}.`,
     );
   const species = { cat: "Кошка", dog: "Собака", other: "Другое животное" };
   const text = [
-    "Новая заявка — Здоровый питомец",
+    `Новая заявка — ${clinic.name}`,
     "Требуется подтверждение администратора",
     `Владелец: ${b.owner}`,
     `Телефон: ${b.phone}`,
     `Питомец: ${b.pet} (${species[b.species]})`,
     `Услуга: ${activeServices.find((s) => s.slug === b.service)?.title}`,
-    `Желаемое время: ${b.date} ${b.time} (Екатеринбург)`,
+    `Желаемое время: ${b.date} ${b.time} (Москва)`,
     `Комментарий: ${b.comment || "—"}`,
     "Согласие на обработку данных получено. Версия согласия: 2026-10-11",
   ].join("\n");
@@ -106,7 +107,7 @@ export async function handleBooking(request: Request, deps: Dependencies) {
   } catch {
     return fail(
       502,
-      "Не удалось доставить заявку. Позвоните: +7 (900) 200-27-30.",
+      `Не удалось доставить заявку. Позвоните: ${clinic.phone}.`,
     );
   }
 }

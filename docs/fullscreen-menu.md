@@ -39,7 +39,7 @@ The root layout wraps the header, main, footer and cookie notice in `.site-frame
 
 `FullscreenMenu` uses the existing Radix Dialog dependency as a controlled modal. The trigger is named «Открыть меню»; the close control is named «Закрыть меню». A visually hidden title and description name the navigation dialog. Radix supplies modal focus containment, Escape dismissal, background scroll locking and focus restoration. The desktop control labels disappear on mobile while their accessible names remain.
 
-On opening, the component records a transform origin at the current scroll position plus 35% of the viewport height, then resets the active photograph to `pets.webp`. The underlying page shifts left (-12vw), tilts (-3deg) and shrinks (scale 0.94), with a (700ms) transition using `cubic-bezier(0.23, 1, 0.32, 1)`. The panel enters from `translateX(105%) rotate(4deg)` over (700ms) with the same easing. Closing reverses the panel motion over (420ms), using `cubic-bezier(0.55, 0, 1, 0.45)`; the overlay fades in over (650ms) and out over (420ms). The closed frame returns to its normal geometry as the opening selector stops matching. Closed panel and overlay states ignore pointer events during their exit.
+On opening, the component records a transform origin at the current scroll position plus 35% of the viewport height, then resets the active photograph to `animals/menu-dog-4k.webp`. The underlying page shifts left (-12vw), tilts (-3deg) and shrinks (scale 0.94), with a (700ms) transition using `cubic-bezier(0.23, 1, 0.32, 1)`. The panel enters from `translateX(105%) rotate(4deg)` over (700ms) with the same easing. Closing reverses the panel motion over (420ms), using `cubic-bezier(0.55, 0, 1, 0.45)`; the overlay fades in over (650ms) and out over (420ms). The closed frame returns to its normal geometry as the opening selector stops matching. Closed panel and overlay states ignore pointer events during their exit.
 
 Under `prefers-reduced-motion: reduce`, panel and overlay animations, page transformation, icon movement, arrow transitions and photo crossfades are disabled. The global rule also disables transitions and smooth scrolling. This branch was checked in source; operating-system preference emulation was not performed.
 
@@ -49,17 +49,17 @@ The links are rendered directly from `src/data/contacts.ts`, preserving names, o
 
 | Destination | URL | Desktop photograph |
 | --- | --- | --- |
-| Главная | `/` | `pets.webp` |
-| Услуги | `/#services` | `pets.webp` |
-| Цены | `/#prices` | `pharmacy.webp` |
-| О клинике | `/#about` | `entrance.webp` |
-| Специалисты | `/#team` | `entrance.webp` |
-| Отзывы | `/#reviews` | `pets.webp` |
-| Контакты | `/#contacts` | `entrance.webp` |
+| Главная | `/` | `animals/menu-dog-4k.webp` |
+| Услуги | `/#services` | `animals/menu-dog-4k.webp` |
+| Цены | `/#prices` | `zooprofi-reception.webp` |
+| О клинике | `/#about` | `zooprofi-entrance.webp` |
+| Специалисты | `/#team` | `zooprofi-entrance.webp` |
+| Отзывы | `/#reviews` | `animals/menu-dog-4k.webp` |
+| Контакты | `/#contacts` | `zooprofi-entrance.webp` |
 
 Pointer entry and keyboard focus both change the active photograph. Images crossfade (280ms) and are decorative within the navigation dialog (`aria-hidden`, empty alt). Their provenance remains in `public/images/SOURCES.md`: the pets image is a user photograph from the clinic's listing, while the entrance and pharmacy images depict the premises. None establishes staff identities or new clinic claims. The link arrow appears on focus and on hover for a fine pointer, with a short (180ms) transition.
 
-Internal links and booking use `onNavigate` to prevent immediate navigation, save the requested URL and close the dialog. `router.push` runs from `onCloseAutoFocus` after the exit animation and dialog unmount release the scroll lock. This ordering lets anchor positions be measured against the restored page and avoids interference from dialog cleanup. Escape and the close button use normal trigger focus restoration. The phone remains `tel:+79002002730`; the existing map link remains an external link with `noopener noreferrer`.
+Internal links and booking use `onNavigate` to prevent immediate navigation, save the requested URL and close the dialog. `router.push` runs from `onCloseAutoFocus` after the exit animation and dialog unmount release the scroll lock. This ordering lets anchor positions be measured against the restored page and avoids interference from dialog cleanup. Escape and the close button use normal trigger focus restoration. The phone remains `tel:+74986029793`; the existing map link remains an external link with `noopener noreferrer`.
 
 ## Evidence and verification
 

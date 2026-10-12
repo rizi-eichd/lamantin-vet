@@ -22,12 +22,12 @@ export async function generateMetadata({
   const s = activeServices.find((s) => s.slug === slug);
   if (!s) return { title: "Услуга не найдена" };
   return {
-    title: `${s.title} в Первоуральске`,
-    description: `${s.short} Клиника Здоровый питомец, Береговая, 10А. Доступность и стоимость уточняйте по телефону.`,
+    title: `${s.title} в Мытищах`,
+    description: `${s.short} Клиника Зоопрофи, Троицкая, 9А. Доступность и стоимость уточняйте по телефону.`,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: {
       ...sharedOpenGraph,
-      title: `${s.title} — Здоровый питомец`,
+      title: `${s.title} — Зоопрофи`,
       description: s.short,
       url: `/services/${s.slug}`,
     },

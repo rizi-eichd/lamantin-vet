@@ -43,8 +43,8 @@ const result = spawnSync(
     env: {
       ...process.env,
       NEXT_PUBLIC_STATIC_HOSTING: "true",
-      NEXT_PUBLIC_BASE_PATH: "/healthy-pet",
-      NEXT_PUBLIC_SITE_URL: "https://vivasik228.github.io/healthy-pet",
+      NEXT_PUBLIC_BASE_PATH: "/zooprofi",
+      NEXT_PUBLIC_SITE_URL: "https://vivasik228.github.io/zooprofi",
       SITE_INDEXABLE: "false",
       PAGES_PROJECT_ROOT: root,
     },

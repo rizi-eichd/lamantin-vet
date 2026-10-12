@@ -691,7 +691,7 @@
     display: block;
   }
   .heroTitle > span:last-child {
-    margin-left: 17%;
+    margin-left: 0;
   }
   .coverPurpose {
     font-size: 12px;

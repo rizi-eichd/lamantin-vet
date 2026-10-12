@@ -1,6 +1,6 @@
 # Public website deployment
 
-Goal: publish the existing website at https://vivasik228.github.io/healthy-pet/.
+Goal: publish the existing website at https://vivasik228.github.io/zooprofi/.
 
 Architecture: retain the normal Next.js server application and add an isolated static export for GitHub Pages. Pages hosting serves all existing public pages, images and interactions. Telegram delivery remains available in the server application; the static build gives the existing unconfigured-booking message without transmitting personal data.
 

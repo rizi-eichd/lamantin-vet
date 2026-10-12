@@ -50,7 +50,7 @@ const benefits = [
   {
     icon: ShoppingBag,
     title: "Найдите вход",
-    text: "Посмотрите фото входа и постройте маршрут до Береговой, 10А.",
+    text: "Посмотрите фото входа и постройте маршрут до Троицкой, 9А.",
   },
 ];
 const serviceGroups = [...new Set(activeServices.map((s) => s.category))].map(
@@ -66,16 +66,17 @@ export default function Home() {
     "@type": "VeterinaryCare",
     name: clinic.name,
     url: clinic.siteUrl,
-    telephone: "+79002002730",
+    telephone: "+74986029793",
     address: {
       "@type": "PostalAddress",
       streetAddress: clinic.address,
       addressLocality: clinic.city,
-      addressRegion: "Свердловская область",
+      addressRegion: "Московская область",
       addressCountry: "RU",
     },
     hasMap: clinic.maps,
-    image: `${clinic.siteUrl}/images/entrance.webp`,
+    openingHours: "Mo-Su 00:00-23:59",
+    image: `${clinic.siteUrl}/images/zooprofi-entrance.webp`,
   };
   return (
     <>
@@ -90,10 +91,10 @@ export default function Home() {
           <div className="container">
             <div className={styles.coverHeading}>
               <h1 className={styles.heroTitle}>
-                <span>Здоровый</span> <span>питомец</span>
+                <span>{clinic.name}</span>
               </h1>
               <p className={styles.coverPurpose}>
-                <span>Ветеринарная клиника</span> <span>в Первоуральске</span>
+                <span>Ветеринарный центр</span> <span>в Мытищах</span>
               </p>
             </div>
             <div className={styles.heroStage}>
@@ -113,8 +114,8 @@ export default function Home() {
             </div>
             <div className={styles.heroText}>
               <p>
-                Оставьте заявку на осмотр, вакцинацию или диагностику. Клиника,
-                ветаптека и зоотовары находятся на ул. Береговой, 10А.
+                Оставьте заявку на осмотр, вакцинацию или диагностику. Центр
+                находится в Мытищах, на ул. Троицкой, 9А, на втором этаже.
               </p>
               <div className={styles.heroActions}>
                 <Button asChild>
@@ -135,7 +136,7 @@ export default function Home() {
               <a href="#contacts">
                 <MapPin size={17} />
                 <span>
-                  Клиника <strong>Береговая, 10А</strong>
+                  Клиника <strong>Троицкая, 9А</strong>
                 </span>
               </a>
               <a
@@ -145,7 +146,7 @@ export default function Home() {
               >
                 Автор фотографии · Pexels <ArrowUpRight size={14} />
               </a>
-              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В ПЕРВОУРАЛЬСКЕ</span>
+              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В МЫТИЩАХ</span>
             </div>
           </div>
         </section>
@@ -163,7 +164,7 @@ export default function Home() {
             <i />
             <span>
               <MapPin size={20} />
-              Береговая, 10А
+              Троицкая, 9А
             </span>
             <i />
             <a href={clinic.phoneHref}>
@@ -230,26 +231,26 @@ export default function Home() {
               <h2>
                 Клиника и ветаптека
                 <br />
-                на Береговой, 10А
+                на Троицкой, 9А
               </h2>
               <span className="section-context">О КЛИНИКЕ</span>
             </div>
             <div className={styles.clinicPhotos}>
               <figure>
                 <Image
-                  src="/images/entrance.webp"
-                  alt="Вход в ветеринарную клинику Здоровый питомец на Береговой, 10А"
+                  src="/images/zooprofi-entrance.webp"
+                  alt="Вход в ветеринарную клинику Зоопрофи на Троицкой, 9А"
                   fill
                   sizes="(max-width:760px) 90vw, 65vw"
                 />
                 <figcaption>
-                  Вход в клинику <strong>Береговая, 10А</strong>
+                  Вход в клинику <strong>Троицкая, 9А</strong>
                 </figcaption>
               </figure>
               <figure>
                 <Image
-                  src="/images/pharmacy.webp"
-                  alt="Ветеринарная аптека — снимок из карточки клиники"
+                  src="/images/zooprofi-reception.webp"
+                  alt="Приём животного — фотография из карточки центра Зоопрофи"
                   fill
                   sizes="(max-width:760px) 90vw, 30vw"
                 />
@@ -258,13 +259,14 @@ export default function Home() {
             <div className={styles.aboutDetails}>
               <div>
                 <p>
-                  В «Здоровом питомце» можно записаться на ветеринарный приём и
-                  купить товары для ухода за животным. Клиника находится в
-                  Первоуральске, на ул. Береговой, 10А.
+                  В «Зоопрофи» можно записаться на ветеринарный приём и купить
+                  товары для ухода за животным. Клиника находится в Мытищах, на
+                  ул. Троицкой, 9А.
                 </p>
                 <p>
-                  Перед поездкой уточните часы работы и возможность приёма. В
-                  контактах есть телефон, фото входа и ссылка на маршрут.
+                  Центр работает круглосуточно. Перед поездкой уточните
+                  возможность приёма. В контактах есть телефон, фото входа и
+                  ссылка на маршрут.
                 </p>
               </div>
               <div>
@@ -506,16 +508,16 @@ export default function Home() {
               <span className="section-context">АДРЕС И ЧАСЫ РАБОТЫ</span>
             </div>
             <p>
-              Первоуральск, ул. Береговая, 10А.
+              Мытищи, ул. Троицкая, 9А, 2-й этаж.
               <br />
-              Уточните часы работы по телефону перед поездкой.
+              Работаем круглосуточно. Перед поездкой согласуйте приём.
             </p>
           </div>
           <div className={styles.contactSpread}>
             <div className="contact-photo">
               <Image
-                src="/images/entrance.webp"
-                alt="Фотография входа — Береговая, 10А"
+                src="/images/zooprofi-entrance.webp"
+                alt="Фотография входа — Троицкая, 9А"
                 fill
                 sizes="(max-width:760px) 95vw, 55vw"
               />
@@ -530,7 +532,7 @@ export default function Home() {
                 <span>
                   Наш адрес
                   <strong>
-                    {clinic.city}, {clinic.address}
+                    {clinic.city}, {clinic.address}, {clinic.floor}
                   </strong>
                 </span>
               </div>

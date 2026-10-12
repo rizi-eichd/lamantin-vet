@@ -1,0 +1,36 @@
+{
+  "organization": "Зоопрофи",
+  "card": "https://yandex.ru/maps/org/zooprofi/198266295809/",
+  "downloaded": "2026-10-12",
+  "processing": "Обычная конвертация в WebP/PNG. Без ИИ, увеличения разрешения, замены фона или дорисовки.",
+  "images": [
+    {
+      "file": "zooprofi-entrance.webp",
+      "source": "https://avatars.mds.yandex.net/get-altay/947364/2a0000016624e8267d8b41ba3a31c19fb81b/orig",
+      "width": 2048,
+      "height": 1518,
+      "description": "Вход в ветеринарный центр"
+    },
+    {
+      "file": "zooprofi-reception.webp",
+      "source": "https://avatars.mds.yandex.net/get-altay/1090799/2a000001622c44d30ef6266f8d966cccca3f/orig",
+      "width": 620,
+      "height": 400,
+      "description": "Приём животного — фото из карточки центра"
+    },
+    {
+      "file": "zooprofi-building.webp",
+      "source": "https://avatars.mds.yandex.net/get-altay/934739/2a00000187452511910bb6eb4904bd8cc377/orig",
+      "width": 1333,
+      "height": 1000,
+      "description": "Здание и вход"
+    },
+    {
+      "file": "zooprofi-logo.png",
+      "source": "https://avatars.mds.yandex.net/get-altay/13594632/2a00000193e5c3b915f1676b9264d596221a/orig",
+      "width": 748,
+      "height": 748,
+      "description": "Логотип, размещённый владельцем в карточке организации"
+    }
+  ]
+}

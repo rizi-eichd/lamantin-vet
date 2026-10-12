@@ -1,5 +1,5 @@
 ---
-name: Здоровый питомец — homepage
+name: Зоопрофи — homepage
 description: Forest photographic cover with Nunito Sans headings, Manrope body and real clinic photographs
 colors:
   forest: "#223f37"
@@ -121,7 +121,7 @@ components:
     padding: "22px 0"
 ---
 
-# Design System: Здоровый питомец — homepage
+# Design System: Зоопрофи — homepage
 
 ## Overview
 
@@ -213,7 +213,7 @@ Native `details` elements share the name `service-categories`, with the first ca
 
 ### Photographic Cover
 
-The source is the local `/images/pets.webp` clinic-card photograph; the clinic spread uses `/images/entrance.webp` and `/images/pharmacy.webp`, with provenance in `public/images/SOURCES.md`. The clinic-name heading has one tracking entrance inspired by [Animista's tracking-in reference](https://animista.net/play/text/tracking-in): `titleTrackingIn` runs for 750ms with `cubic-bezier(0.215, 0.61, 0.355, 1)`, once and without delay. It starts at `-0.18em` letter spacing and zero opacity, reaches 0.6 opacity at 40%, and ends at full opacity with the existing tracking (`-0.04em` on desktop, `-0.035em` at 760px and below). Its amplitude and duration are adapted to this heading. The cover aperture continues to animate from `clip-path: inset(0 14% 0 14%)` to `inset(0)` for 850ms with `cubic-bezier(0.23, 1, 0.32, 1)`. These run together as one opening sequence; other text has no entrance animation. Reduced motion disables both entrance animations and disclosure/arrow transitions; the inherited global reduced-motion rule also disables transitions and smooth scrolling. `HomeMotion` and `HomeReveal` are plain wrappers, so content is visible without JavaScript.
+The source is the local `/images/animals/hero-dog-4k.webp` Pexels photograph; the clinic spread uses `/images/zooprofi-entrance.webp` and `/images/zooprofi-reception.webp`, with provenance in `public/images/SOURCES.md`. The clinic-name heading has one tracking entrance inspired by [Animista's tracking-in reference](https://animista.net/play/text/tracking-in): `titleTrackingIn` runs for 750ms with `cubic-bezier(0.215, 0.61, 0.355, 1)`, once and without delay. It starts at `-0.18em` letter spacing and zero opacity, reaches 0.6 opacity at 40%, and ends at full opacity with the existing tracking (`-0.04em` on desktop, `-0.035em` at 760px and below). Its amplitude and duration are adapted to this heading. The cover aperture continues to animate from `clip-path: inset(0 14% 0 14%)` to `inset(0)` for 850ms with `cubic-bezier(0.23, 1, 0.32, 1)`. These run together as one opening sequence; other text has no entrance animation. Reduced motion disables both entrance animations and disclosure/arrow transitions; the inherited global reduced-motion rule also disables transitions and smooth scrolling. `HomeMotion` and `HomeReveal` are plain wrappers, so content is visible without JavaScript.
 
 ### Practical Information
 
