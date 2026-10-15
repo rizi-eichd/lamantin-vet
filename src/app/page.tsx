@@ -49,8 +49,8 @@ const benefits = [
   },
   {
     icon: ShoppingBag,
-    title: "Найдите вход",
-    text: "Посмотрите фото входа и постройте маршрут до ул. 45 Стрелковой Дивизии, 48.",
+    title: "Постройте маршрут",
+    text: "Посмотрите фото здания и постройте маршрут: Октябрьская набережная, 34, к. 4, стр. 1.",
   },
 ];
 const serviceGroups = [...new Set(activeServices.map((s) => s.category))].map(
@@ -76,7 +76,7 @@ export default function Home() {
     },
     hasMap: clinic.maps,
     openingHours: clinic.openingHours,
-    image: `${clinic.siteUrl}/images/favorit-entrance.webp`,
+    image: `${clinic.siteUrl}/images/lamantin-building.webp`,
   };
   return (
     <>
@@ -94,7 +94,7 @@ export default function Home() {
                 <span>{clinic.name}</span>
               </h1>
               <p className={styles.coverPurpose}>
-                <span>Ветеринарная клиника</span> <span>в Воронеже</span>
+                <span>Ветеринарная клиника</span> <span>в Санкт-Петербурге</span>
               </p>
             </div>
             <div className={styles.heroStage}>
@@ -115,7 +115,7 @@ export default function Home() {
             <div className={styles.heroText}>
               <p>
                 Оставьте заявку на осмотр, вакцинацию или диагностику. Клиника
-                находится в Воронеже, на ул. 45 Стрелковой Дивизии, 48, на первом этаже.
+                находится в Санкт-Петербурге, на Октябрьской набережной, 34, к. 4, стр. 1.
               </p>
               <div className={styles.heroActions}>
                 <Button asChild>
@@ -136,7 +136,7 @@ export default function Home() {
               <a href="#contacts">
                 <MapPin size={17} />
                 <span>
-                  Клиника <strong>45 Стрелковой Дивизии, 48</strong>
+                  Клиника <strong>Октябрьская наб., 34, к. 4, стр. 1</strong>
                 </span>
               </a>
               <a
@@ -146,7 +146,7 @@ export default function Home() {
               >
                 Автор фотографии · Pexels <ArrowUpRight size={14} />
               </a>
-              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В ВОРОНЕЖЕ</span>
+              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В САНКТ-ПЕТЕРБУРГЕ</span>
             </div>
           </div>
         </section>
@@ -164,7 +164,7 @@ export default function Home() {
             <i />
             <span>
               <MapPin size={20} />
-              45 Стрелковой Дивизии, 48
+              Октябрьская наб., 34, к. 4, стр. 1
             </span>
             <i />
             <a href={clinic.phoneHref}>
@@ -231,26 +231,26 @@ export default function Home() {
               <h2>
                 Ветеринарная клиника
                 <br />
-                на улице 45 Стрелковой Дивизии, 48
+                на Октябрьской набережной, 34, к. 4, стр. 1
               </h2>
               <span className="section-context">О КЛИНИКЕ</span>
             </div>
             <div className={styles.clinicPhotos}>
               <figure>
                 <Image
-                  src="/images/favorit-entrance.webp"
-                  alt="Вход в ветеринарную клинику Фаворит на улице 45 Стрелковой Дивизии, 48"
+                  src="/images/lamantin-building.webp"
+                  alt="Здание ЖК Pulse на набережной — Октябрьская набережная, 34, к. 4, стр. 1"
                   fill
                   sizes="(max-width:760px) 90vw, 65vw"
                 />
                 <figcaption>
-                  Вход в клинику <strong>45 Стрелковой Дивизии, 48</strong>
+                  ЖК Pulse на набережной <strong>Октябрьская наб., 34, к. 4, стр. 1</strong>
                 </figcaption>
               </figure>
               <figure>
                 <Image
-                  src="/images/favorit-cat.webp"
-                  alt="Кошка — фотография из карточки клиники Фаворит в 2ГИС"
+                  src="/images/lamantin-reception.webp"
+                  alt="Ресепшен клиники Ламантин — фотография из 2ГИС"
                   fill
                   sizes="(max-width:760px) 90vw, 30vw"
                 />
@@ -259,13 +259,12 @@ export default function Home() {
             <div className={styles.aboutDetails}>
               <div>
                 <p>
-                  В клинике «Фаворит» можно записаться на ветеринарный приём.
-                  Клиника находится в Воронеже, на ул. 45 Стрелковой Дивизии, 48,
-                  на первом этаже.
+                  В клинике «Ламантин» можно записаться на ветеринарный приём.
+                  Клиника находится в Санкт-Петербурге, на Октябрьской набережной, 34, к. 4, стр. 1.
                 </p>
                 <p>
                   Расписание работы указано в контактах. Перед поездкой уточните
-                  возможность приёма. В контактах есть телефон, фото входа и
+                  возможность приёма. В контактах есть телефон, фото здания и
                   ссылка на маршрут.
                 </p>
               </div>
@@ -508,7 +507,7 @@ export default function Home() {
               <span className="section-context">АДРЕС И ЧАСЫ РАБОТЫ</span>
             </div>
             <p>
-              Воронеж, ул. 45 Стрелковой Дивизии, 48, 1-й этаж.
+              Санкт-Петербург, Октябрьская набережная, 34, к. 4, стр. 1.
               <br />
               Перед поездкой уточните расписание и согласуйте приём.
             </p>
@@ -516,14 +515,14 @@ export default function Home() {
           <div className={styles.contactSpread}>
             <div className="contact-photo">
               <Image
-                src="/images/favorit-entrance.webp"
-                alt="Фотография входа — 45 Стрелковой Дивизии, 48"
+                src="/images/lamantin-building.webp"
+                alt="Здание — Октябрьская наб., 34, к. 4, стр. 1"
                 fill
                 sizes="(max-width:760px) 95vw, 55vw"
               />
               <span>
                 <MapPin size={18} />
-                Так выглядит вход в клинику
+                Клиника в ЖК Pulse на набережной
               </span>
             </div>
             <div className="contact-info">
@@ -532,7 +531,7 @@ export default function Home() {
                 <span>
                   Наш адрес
                   <strong>
-                    {clinic.city}, {clinic.address}, {clinic.floor}
+                    {clinic.city}, {clinic.address}
                   </strong>
                 </span>
               </div>

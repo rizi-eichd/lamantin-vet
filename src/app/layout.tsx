@@ -16,11 +16,11 @@ import "@fontsource/nunito-sans/700.css";
 export const metadata: Metadata = {
   metadataBase: new URL(clinic.siteUrl),
   title: {
-    default: "Фаворит — ветеринарная клиника в Воронеже",
-    template: "%s | Фаворит",
+    default: "Ламантин — ветеринарная клиника в Санкт-Петербурге",
+    template: "%s | Ламантин",
   },
   description:
-    "Ветеринарная клиника в Воронеже. 45 Стрелковой Дивизии, 48. Узнайте об услугах и оставьте заявку на приём: +7 (473) 290-46-84.",
+    "Ветеринарная клиника в Санкт-Петербурге. Октябрьская наб., 34, к. 4, стр. 1. Узнайте об услугах и оставьте заявку на приём: +7 (812) 240-51-14.",
   robots: {
     index: process.env.SITE_INDEXABLE === "true",
     follow: process.env.SITE_INDEXABLE === "true",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: clinic.name,
-    title: "Фаворит — клиника в Воронеже",
-    description: "Ветеринарная помощь в Воронеже. 45 Стрелковой Дивизии, 48.",
+    title: "Ламантин — клиника в Санкт-Петербурге",
+    description: "Ветеринарная помощь в Санкт-Петербурге. Октябрьская наб., 34, к. 4, стр. 1.",
     images: sharedOpenGraph.images,
   },
 };

@@ -51,15 +51,15 @@ The links are rendered directly from `src/data/contacts.ts`, preserving names, o
 | --- | --- | --- |
 | Главная | `/` | `animals/menu-dog-4k.webp` |
 | Услуги | `/#services` | `animals/menu-dog-4k.webp` |
-| Цены | `/#prices` | `favorit-vet-reception.webp` |
-| О клинике | `/#about` | `favorit-vet-entrance.webp` |
-| Специалисты | `/#team` | `favorit-vet-entrance.webp` |
+| Цены | `/#prices` | `lamantin-vet-reception.webp` |
+| О клинике | `/#about` | `lamantin-vet-entrance.webp` |
+| Специалисты | `/#team` | `lamantin-vet-entrance.webp` |
 | Отзывы | `/#reviews` | `animals/menu-dog-4k.webp` |
-| Контакты | `/#contacts` | `favorit-vet-entrance.webp` |
+| Контакты | `/#contacts` | `lamantin-vet-entrance.webp` |
 
 Pointer entry and keyboard focus both change the active photograph. Images crossfade (280ms) and are decorative within the navigation dialog (`aria-hidden`, empty alt). Their provenance remains in `public/images/SOURCES.md`: the pets image is a user photograph from the clinic's listing, while the entrance and pharmacy images depict the premises. None establishes staff identities or new clinic claims. The link arrow appears on focus and on hover for a fine pointer, with a short (180ms) transition.
 
-Internal links and booking use `onNavigate` to prevent immediate navigation, save the requested URL and close the dialog. `router.push` runs from `onCloseAutoFocus` after the exit animation and dialog unmount release the scroll lock. This ordering lets anchor positions be measured against the restored page and avoids interference from dialog cleanup. Escape and the close button use normal trigger focus restoration. The phone remains `tel:+74732904684`; the existing map link remains an external link with `noopener noreferrer`.
+Internal links and booking use `onNavigate` to prevent immediate navigation, save the requested URL and close the dialog. `router.push` runs from `onCloseAutoFocus` after the exit animation and dialog unmount release the scroll lock. This ordering lets anchor positions be measured against the restored page and avoids interference from dialog cleanup. Escape and the close button use normal trigger focus restoration. The phone remains `tel:+78122405114`; the existing map link remains an external link with `noopener noreferrer`.
 
 ## Evidence and verification
 

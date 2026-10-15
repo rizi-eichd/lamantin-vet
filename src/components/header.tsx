@@ -7,10 +7,10 @@ import { Button } from "./ui/button";
 import { FullscreenMenu } from "./fullscreen-menu";
 export function Logo() {
   return (
-    <Link href="/" className="logo" aria-label="Фаворит — главная">
+    <Link href="/" className="logo" aria-label="Ламантин — главная">
       <span className="logo-mark">
         <Image
-          src="/images/favorit-logo.svg"
+          src="/images/lamantin-logo.svg"
           alt=""
           width={64}
           height={64}

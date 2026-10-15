@@ -1,0 +1,22 @@
+{
+  "organization": "Ламантин",
+  "card": "https://2gis.ru/spb/firm/70000001093776752",
+  "checked": "2026-10-15",
+  "images": [
+    {
+      "file": "lamantin-reception.webp",
+      "source": "https://i9.photo.2gis.com/main/branch/38/70000001093776752/common",
+      "description": "Ресепшен клиники Ламантин",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "lamantin-building.webp",
+      "source": "https://i0.photo.2gis.com/main/geo/38/70030076189315276/view",
+      "description": "Здание ЖК Pulse на набережной",
+      "width": 1440,
+      "height": 1080
+    }
+  ],
+  "logo": "Новый SVG-знак сайта, монограмма Л, без ИИ. Не является историческим логотипом клиники."
+}

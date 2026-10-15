@@ -13,8 +13,8 @@ import styles from "./fullscreen-menu.module.css";
 
 const photos = [
   { src: animalPhotos.menu.src, position: animalPhotos.menu.position },
-  { src: "/images/favorit-entrance.webp", position: "50% 50%" },
-  { src: "/images/favorit-cat.webp", position: "50% 50%" },
+  { src: "/images/lamantin-building.webp", position: "50% 50%" },
+  { src: "/images/lamantin-reception.webp", position: "50% 50%" },
 ] as const;
 const linkPhotos = [0, 0, 2, 1, 1, 0, 1];
 
@@ -126,7 +126,7 @@ export function FullscreenMenu() {
         >
           <Dialog.Title className="sr-only">Навигация по сайту</Dialog.Title>
           <Dialog.Description className="sr-only">
-            Ветеринарная клиника в Воронеже
+            Ветеринарная клиника в Санкт-Петербурге
           </Dialog.Description>
           <div className={styles.top}>
             <Dialog.Close asChild>
@@ -134,10 +134,10 @@ export function FullscreenMenu() {
                 href="/"
                 onNavigate={(event) => navigateAfterClose("/", event)}
                 className={styles.brand}
-                aria-label="Фаворит — главная"
+                aria-label="Ламантин — главная"
               >
                 <Image
-                  src="/images/favorit-logo.svg"
+                  src="/images/lamantin-logo.svg"
                   width={64}
                   height={64}
                   sizes="44px"
@@ -195,7 +195,7 @@ export function FullscreenMenu() {
                   {clinic.phone}
                 </a>
                 <p>
-                  {clinic.city}, {clinic.address}, {clinic.floor}
+                  {clinic.city}, {clinic.address}
                 </p>
                 <div className={styles.actions}>
                   <Dialog.Close asChild>

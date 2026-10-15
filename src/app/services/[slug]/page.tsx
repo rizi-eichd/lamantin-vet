@@ -22,12 +22,12 @@ export async function generateMetadata({
   const s = activeServices.find((s) => s.slug === slug);
   if (!s) return { title: "Услуга не найдена" };
   return {
-    title: `${s.title} в Воронеже`,
-    description: `${s.short} Клиника Фаворит, 45 Стрелковой Дивизии, 48. Доступность и стоимость уточняйте по телефону.`,
+    title: `${s.title} в Санкт-Петербурге`,
+    description: `${s.short} Клиника Ламантин, Октябрьская наб., 34, к. 4, стр. 1. Доступность и стоимость уточняйте по телефону.`,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: {
       ...sharedOpenGraph,
-      title: `${s.title} — Фаворит`,
+      title: `${s.title} — Ламантин`,
       description: s.short,
       url: `/services/${s.slug}`,
     },

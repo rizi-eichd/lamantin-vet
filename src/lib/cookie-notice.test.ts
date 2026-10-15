@@ -3,17 +3,17 @@ import { hasCookieNotice, cookieNoticeValue } from "./cookie-notice";
 
 describe("cookie notice", () => {
   it("recognizes the current notice among unrelated cookies", () => {
-    expect(hasCookieNotice("other=123; fv_cookie_notice=v1; theme=light")).toBe(
+    expect(hasCookieNotice("other=123; lm_cookie_notice=v1; theme=light")).toBe(
       true,
     );
   });
 
   it.each([
     "",
-    "fv_cookie_notice=v0",
-    "fv_cookie_notice=no",
-    "other_fv_cookie_notice=v1",
-    "fv_cookie_notice=v1_extra",
+    "lm_cookie_notice=v0",
+    "lm_cookie_notice=no",
+    "other_lm_cookie_notice=v1",
+    "lm_cookie_notice=v1_extra",
   ])(
     "does not suppress the notice for an absent or invalid acknowledgement: %s",
     (cookies) => expect(hasCookieNotice(cookies)).toBe(false),
@@ -21,7 +21,7 @@ describe("cookie notice", () => {
 
   it("limits the acknowledgement to this site for 180 days", () => {
     const value = cookieNoticeValue(false);
-    expect(value).toContain("fv_cookie_notice=v1");
+    expect(value).toContain("lm_cookie_notice=v1");
     expect(value).toContain("Max-Age=15552000");
     expect(value).toContain("Path=/");
     expect(value).toContain("SameSite=Lax");

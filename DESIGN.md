@@ -1,5 +1,5 @@
 ---
-name: Фаворит
+name: Ламантин
 description: Тёплая кремовая основа, выразительные заголовки и настоящие фотографии
 colors:
   ink: "#2c5151"
@@ -71,7 +71,7 @@ components:
     padding: "36px"
 ---
 
-# Design System: Фаворит
+# Design System: Ламантин
 
 ## Overview
 
