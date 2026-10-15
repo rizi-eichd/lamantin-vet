@@ -44,7 +44,7 @@ const result = spawnSync(
       ...process.env,
       NEXT_PUBLIC_STATIC_HOSTING: "true",
       NEXT_PUBLIC_BASE_PATH: "/lamantin-vet",
-      NEXT_PUBLIC_SITE_URL: "https://vivasik228.github.io/lamantin-vet",
+      NEXT_PUBLIC_SITE_URL: "https://rizi-eichd.github.io/lamantin-vet",
       SITE_INDEXABLE: "false",
       PAGES_PROJECT_ROOT: root,
     },
