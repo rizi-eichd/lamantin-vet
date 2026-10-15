@@ -1,0 +1,36 @@
+2:"$Sreact.fragment"
+3:"/lamantin-vet/_next/static/chunks/101tbcgg_gu1j.js"
+4:"/lamantin-vet/_next/static/chunks/03abdsgof30bb.js"
+5:"/lamantin-vet/_next/static/chunks/1xvrdvancsgzp.js"
+6:"/lamantin-vet/_next/static/chunks/1gb66u8wf6dvp.js"
+7:I[77766,["$3","$4","$5","$6"],"default"]
+8:I[96562,["$3","$4","$5","$6"],"default"]
+d:"/lamantin-vet/_next/static/chunks/2vmflmy6vz069.js"
+e:"/lamantin-vet/_next/static/chunks/0j_lpxlqfl91h.js"
+f:I[75522,["$3","$4","$5","$6","$d","$e"],""]
+10:I[93817,["$3","$4","$5","$6","$d","$e"],"default"]
+12:I[64166,["$3","$4","$5","$6","$d","$e"],"Image"]
+13:"$Sreact.suspense"
+14:"BookingQueryForm"
+15:I[77541,["$3","$4","$5","$6","$d","$e"],"$14"]
+16:I[6913,["$3","$4","$5","$6"],"OutletBoundary"]
+19:"ViewportBoundary"
+1a:I[6913,["$3","$4","$5","$6"],"$19"]
+1b:"MetadataBoundary"
+1c:I[6913,["$3","$4","$5","$6"],"$1b"]
+1d:I[54774,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+11:[["$","source",null,{"type":"image/webp","srcSet":"/lamantin-vet/images/animals/booking-cat-768.webp 768w, /lamantin-vet/images/animals/booking-cat-1280.webp 1280w, /lamantin-vet/images/animals/booking-cat-1920.webp 1920w, /lamantin-vet/images/animals/booking-cat-2560.webp 2560w, /lamantin-vet/images/animals/booking-cat-4k.webp 3840w","sizes":"(max-width:760px) 90vw, 35vw"}],["$","$L12",null,{"src":"/lamantin-vet/images/animals/booking-cat-4k.webp","alt":"Белая кошка с зелёными глазами в мягком дневном свете","style":{"objectPosition":"50% 42%"},"fill":true,"sizes":"(max-width:760px) 90vw, 35vw","unoptimized":true,"priority":false,"preload":false}]]
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"container","children":[["$","div",null,{"className":"page-intro","children":[["$","nav",null,{"className":"breadcrumb","aria-label":"Хлебные крошки","children":[["$","$Lf",null,{"href":"/","children":"Главная"}],["$","span",null,{"children":"/"}],["$","span",null,{"children":"Запись на приём"}]]}],["$","h1",null,{"children":"Заявка на приём"}],["$","span",null,{"className":"section-context","children":"ФОРМА ЗАЯВКИ"}],["$","p",null,{"children":"Выберите услугу, укажите телефон и желаемое время. После получения заявки администратор свяжется с вами для подтверждения записи."}]]}],["$","div",null,{"className":"booking-page-grid","children":[["$","aside",null,{"className":"booking-aside","children":[["$","h3",null,{"children":"3 шага до подтверждения записи"}],["$","ul",null,{"children":[["$","li",null,{"children":[["$","$L10",null,{"icon":{"name":"check","size":24,"node":[["path",{"d":"M20 6 9 17l-5-5","key":"1gmf2c"}]]},"size":17}],"Вы заполняете заявку"]}],["$","li",null,{"children":[["$","$L10",null,{"icon":"$c:0:1:d:r:props:children:0:props:children:1:props:children:0:props:children:1:props:children:0:props:children:0:props:icon","size":17}],"Администратор уточняет детали"]}],["$","li",null,{"children":[["$","$L10",null,{"icon":"$c:0:1:d:r:props:children:0:props:children:1:props:children:0:props:children:1:props:children:0:props:children:0:props:icon","size":17}],"Вы согласуете время приёма"]}]]}],["$","p",null,{"children":"Выбранное время не считается забронированным до подтверждения клиникой."}],["$","p",null,{"children":"Нужна срочная помощь или удобнее поговорить? Позвоните и уточните возможность приёма."}],["$","a",null,{"className":"text-link","href":"tel:+78122405114","children":[["$","$L10",null,{"icon":{"name":"phone","size":24,"node":[["path",{"d":"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384","key":"9njp5v"}]]},"size":17}],"+7 (812) 240-51-14"]}],["$","div",null,{"className":"booking-aside-photo","children":["$","picture",null,{"children":"$11"}]}]]}],["$","$13",null,{"fallback":["$","p",null,{"role":"status","children":"Загрузка формы…"}],"children":["$","$L15",null,{}]}]]}]]}],[["$","script","script-0",{"src":"/lamantin-vet/_next/static/chunks/2vmflmy6vz069.js","async":true}],["$","script","script-1",{"src":"/lamantin-vet/_next/static/chunks/0j_lpxlqfl91h.js","async":true}]],["$","$L16",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]]}],"p":"$@18","v":null,"s":"$b"}}]]
+1:[["children",{"s":"booking","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L1a",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1c",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$13",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Заявка на приём | Ламантин"}],["$","meta","1",{"name":"description","content":"Оставьте заявку в клинику Ламантин в Санкт-Петербурге. Администратор подтвердит услугу, дату и время."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"canonical","href":"https://rizi-eichd.github.io/lamantin-vet/booking/"}],["$","meta","4",{"property":"og:title","content":"Ламантин — клиника в Санкт-Петербурге"}],["$","meta","5",{"property":"og:description","content":"Ветеринарная помощь в Санкт-Петербурге. Октябрьская наб., 34, к. 4, стр. 1."}],["$","meta","6",{"property":"og:site_name","content":"Ламантин"}],["$","meta","7",{"property":"og:locale","content":"ru_RU"}],["$","meta","8",{"property":"og:image","content":"https://rizi-eichd.github.io/lamantin-vet/images/animals/hero-dog-4k.webp"}],["$","meta","9",{"property":"og:image:width","content":"3840"}],["$","meta","10",{"property":"og:image:height","content":"2847"}],["$","meta","11",{"property":"og:image:alt","content":"Золотистый ретривер на прогулке среди зелени"}],["$","meta","12",{"property":"og:type","content":"website"}],["$","meta","13",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","14",{"name":"twitter:title","content":"Ламантин — клиника в Санкт-Петербурге"}],["$","meta","15",{"name":"twitter:description","content":"Ветеринарная помощь в Санкт-Петербурге. Октябрьская наб., 34, к. 4, стр. 1."}],["$","meta","16",{"name":"twitter:image","content":"https://rizi-eichd.github.io/lamantin-vet/images/animals/hero-dog-4k.webp"}],["$","meta","17",{"name":"twitter:image:alt","content":"Золотистый ретривер на прогулке среди зелени"}],["$","meta","18",{"name":"twitter:image:width","content":"3840"}],["$","meta","19",{"name":"twitter:image:height","content":"2847"}],["$","link","20",{"rel":"icon","href":"/lamantin-vet/icon.png?icon.0dyly9uicsmuy.png","sizes":"256x256","type":"image/png"}],["$","$L1d","21",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@1e","v":null,"s":"$b"}},"a":"$@1f","u":"$@20","b":"uuba3dKLezF_vkTXRKe0p"}
+17:null
+20:true
+b:300
+b:C
+1f:0
+9:"$undefined"
+1e:"$undefined"
+18:"$undefined"

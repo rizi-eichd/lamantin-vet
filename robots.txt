@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /
+
+Sitemap: https://rizi-eichd.github.io/lamantin-vet/sitemap.xml
