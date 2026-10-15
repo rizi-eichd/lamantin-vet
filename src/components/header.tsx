@@ -10,10 +10,10 @@ export function Logo() {
     <Link href="/" className="logo" aria-label="Ламантин — главная">
       <span className="logo-mark">
         <Image
-          src="/images/lamantin-logo.png"
+          src="/images/lamantin-logo-round.png"
           alt=""
-          width={1024}
-          height={1024}
+          width={862}
+          height={862}
           sizes="(max-width: 760px) 44px, 56px"
         />
       </span>
