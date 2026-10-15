@@ -57,7 +57,7 @@ describe("booking validation", () => {
 describe("delivery contract", () => {
   it("uses the new clinic phone when delivery is unavailable", async () => {
     const response = await handleBooking(request(), { ...deps(), token: "" });
-    expect((await response.json()).message).toContain("+7 (498) 602-97-93");
+    expect((await response.json()).message).toContain("+7 (473) 290-46-84");
   });
   it("identifies Zooprofi and Moscow time in administrator notifications", async () => {
     let message = "";
@@ -68,7 +68,7 @@ describe("delivery contract", () => {
         return new Response('{"ok":true}', { status: 200 });
       },
     });
-    expect(message).toContain("Новая заявка — Зоопрофи");
+    expect(message).toContain("Новая заявка — Фаворит");
     expect(message).toContain("(Москва)");
   });
   it("returns unavailable without Telegram", async () => {

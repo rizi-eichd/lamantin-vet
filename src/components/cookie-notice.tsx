@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { cookieNoticeValue, hasCookieNotice } from "@/lib/cookie-notice";
 import styles from "./cookie-notice.module.css";
 
-const OPEN_NOTICE = "zooprofi:cookie-notice";
+const OPEN_NOTICE = "favorit-vet:cookie-notice";
 
 export function CookieSettings({ className }: { className?: string }) {
   return (

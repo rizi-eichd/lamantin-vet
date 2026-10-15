@@ -1,5 +1,5 @@
 ---
-name: Зоопрофи
+name: Фаворит
 description: Тёплая кремовая основа, выразительные заголовки и настоящие фотографии
 colors:
   ink: "#2c5151"
@@ -71,7 +71,7 @@ components:
     padding: "36px"
 ---
 
-# Design System: Зоопрофи
+# Design System: Фаворит
 
 ## Overview
 

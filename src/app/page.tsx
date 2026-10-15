@@ -50,7 +50,7 @@ const benefits = [
   {
     icon: ShoppingBag,
     title: "Найдите вход",
-    text: "Посмотрите фото входа и постройте маршрут до Троицкой, 9А.",
+    text: "Посмотрите фото входа и постройте маршрут до ул. 45 Стрелковой Дивизии, 48.",
   },
 ];
 const serviceGroups = [...new Set(activeServices.map((s) => s.category))].map(
@@ -66,17 +66,17 @@ export default function Home() {
     "@type": "VeterinaryCare",
     name: clinic.name,
     url: clinic.siteUrl,
-    telephone: "+74986029793",
+    telephone: clinic.phoneHref.replace("tel:", ""),
     address: {
       "@type": "PostalAddress",
       streetAddress: clinic.address,
       addressLocality: clinic.city,
-      addressRegion: "Московская область",
+      addressRegion: clinic.region,
       addressCountry: "RU",
     },
     hasMap: clinic.maps,
-    openingHours: "Mo-Su 00:00-23:59",
-    image: `${clinic.siteUrl}/images/zooprofi-entrance.webp`,
+    openingHours: clinic.openingHours,
+    image: `${clinic.siteUrl}/images/favorit-entrance.webp`,
   };
   return (
     <>
@@ -94,7 +94,7 @@ export default function Home() {
                 <span>{clinic.name}</span>
               </h1>
               <p className={styles.coverPurpose}>
-                <span>Ветеринарный центр</span> <span>в Мытищах</span>
+                <span>Ветеринарная клиника</span> <span>в Воронеже</span>
               </p>
             </div>
             <div className={styles.heroStage}>
@@ -114,8 +114,8 @@ export default function Home() {
             </div>
             <div className={styles.heroText}>
               <p>
-                Оставьте заявку на осмотр, вакцинацию или диагностику. Центр
-                находится в Мытищах, на ул. Троицкой, 9А, на втором этаже.
+                Оставьте заявку на осмотр, вакцинацию или диагностику. Клиника
+                находится в Воронеже, на ул. 45 Стрелковой Дивизии, 48, на первом этаже.
               </p>
               <div className={styles.heroActions}>
                 <Button asChild>
@@ -136,7 +136,7 @@ export default function Home() {
               <a href="#contacts">
                 <MapPin size={17} />
                 <span>
-                  Клиника <strong>Троицкая, 9А</strong>
+                  Клиника <strong>45 Стрелковой Дивизии, 48</strong>
                 </span>
               </a>
               <a
@@ -146,7 +146,7 @@ export default function Home() {
               >
                 Автор фотографии · Pexels <ArrowUpRight size={14} />
               </a>
-              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В МЫТИЩАХ</span>
+              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В ВОРОНЕЖЕ</span>
             </div>
           </div>
         </section>
@@ -159,12 +159,12 @@ export default function Home() {
             <i />
             <span>
               <ShoppingBag size={20} />
-              Ветаптека и зоотовары
+              Запись на приём
             </span>
             <i />
             <span>
               <MapPin size={20} />
-              Троицкая, 9А
+              45 Стрелковой Дивизии, 48
             </span>
             <i />
             <a href={clinic.phoneHref}>
@@ -229,28 +229,28 @@ export default function Home() {
           <div className="container">
             <div className={styles.aboutHeading}>
               <h2>
-                Клиника и ветаптека
+                Ветеринарная клиника
                 <br />
-                на Троицкой, 9А
+                на улице 45 Стрелковой Дивизии, 48
               </h2>
               <span className="section-context">О КЛИНИКЕ</span>
             </div>
             <div className={styles.clinicPhotos}>
               <figure>
                 <Image
-                  src="/images/zooprofi-entrance.webp"
-                  alt="Вход в ветеринарную клинику Зоопрофи на Троицкой, 9А"
+                  src="/images/favorit-entrance.webp"
+                  alt="Вход в ветеринарную клинику Фаворит на улице 45 Стрелковой Дивизии, 48"
                   fill
                   sizes="(max-width:760px) 90vw, 65vw"
                 />
                 <figcaption>
-                  Вход в клинику <strong>Троицкая, 9А</strong>
+                  Вход в клинику <strong>45 Стрелковой Дивизии, 48</strong>
                 </figcaption>
               </figure>
               <figure>
                 <Image
-                  src="/images/zooprofi-reception.webp"
-                  alt="Приём животного — фотография из карточки центра Зоопрофи"
+                  src="/images/favorit-cat.webp"
+                  alt="Кошка — фотография из карточки клиники Фаворит в 2ГИС"
                   fill
                   sizes="(max-width:760px) 90vw, 30vw"
                 />
@@ -259,12 +259,12 @@ export default function Home() {
             <div className={styles.aboutDetails}>
               <div>
                 <p>
-                  В «Зоопрофи» можно записаться на ветеринарный приём и купить
-                  товары для ухода за животным. Клиника находится в Мытищах, на
-                  ул. Троицкой, 9А.
+                  В клинике «Фаворит» можно записаться на ветеринарный приём.
+                  Клиника находится в Воронеже, на ул. 45 Стрелковой Дивизии, 48,
+                  на первом этаже.
                 </p>
                 <p>
-                  Центр работает круглосуточно. Перед поездкой уточните
+                  Расписание работы указано в контактах. Перед поездкой уточните
                   возможность приёма. В контактах есть телефон, фото входа и
                   ссылка на маршрут.
                 </p>
@@ -277,11 +277,11 @@ export default function Home() {
                   </li>
                   <li>
                     <Check size={18} />
-                    Ветеринарная аптека
+                    УЗИ животных
                   </li>
                   <li>
                     <Check size={18} />
-                    Зоотовары
+                    Запись по телефону
                   </li>
                 </ul>
                 <Button asChild variant="outline">
@@ -381,15 +381,15 @@ export default function Home() {
               <div className="section-heading">
                 <div>
                   <h2>Отзывы посетителей</h2>
-                  <span className="section-context">ЯНДЕКС КАРТЫ</span>
+                  <span className="section-context">2ГИС</span>
                 </div>
                 <Button asChild variant="outline">
                   <a
-                    href={clinic.maps + "reviews/"}
+                    href={clinic.reviews}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Отзывы на Яндекс Картах <ArrowUpRight size={18} />
+                    Отзывы в 2ГИС <ArrowUpRight size={18} />
                   </a>
                 </Button>
               </div>
@@ -419,12 +419,12 @@ export default function Home() {
                   <div>
                     <h3>Откройте отзывы в карточке клиники</h3>
                     <p>
-                      Ссылка ведёт на Яндекс Карты. Там можно прочитать отзывы
+                      Ссылка ведёт в 2ГИС. Там можно прочитать отзывы
                       владельцев питомцев и посмотреть их оценки.
                     </p>
                   </div>
                   <span className="review-brand">
-                    Я<span>Карты</span>
+                    2<span>ГИС</span>
                     <ArrowUpRight size={24} />
                   </span>
                 </div>
@@ -508,16 +508,16 @@ export default function Home() {
               <span className="section-context">АДРЕС И ЧАСЫ РАБОТЫ</span>
             </div>
             <p>
-              Мытищи, ул. Троицкая, 9А, 2-й этаж.
+              Воронеж, ул. 45 Стрелковой Дивизии, 48, 1-й этаж.
               <br />
-              Работаем круглосуточно. Перед поездкой согласуйте приём.
+              Перед поездкой уточните расписание и согласуйте приём.
             </p>
           </div>
           <div className={styles.contactSpread}>
             <div className="contact-photo">
               <Image
-                src="/images/zooprofi-entrance.webp"
-                alt="Фотография входа — Троицкая, 9А"
+                src="/images/favorit-entrance.webp"
+                alt="Фотография входа — 45 Стрелковой Дивизии, 48"
                 fill
                 sizes="(max-width:760px) 95vw, 55vw"
               />
@@ -566,7 +566,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Открыть Яндекс Карты <ArrowUpRight size={17} />
+                Открыть 2ГИС <ArrowUpRight size={17} />
               </a>
             </div>
           </div>

@@ -13,8 +13,8 @@ export function Footer() {
             <div>
               <Logo />
               <p>
-                Ветеринарная клиника, ветаптека
-                <br />и зоотовары в Мытищах.
+                Ветеринарная клиника
+                <br />в Воронеже.
               </p>
             </div>
             <nav aria-label="Навигация в подвале">
@@ -30,12 +30,12 @@ export function Footer() {
                 {clinic.city}, {clinic.address}, {clinic.floor}
               </p>
               <a href={clinic.maps} target="_blank" rel="noopener noreferrer">
-                Мы на Яндекс Картах <ArrowUpRight size={16} />
+                Мы на 2ГИС <ArrowUpRight size={16} />
               </a>
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Зоопрофи</span>
+            <span>© {new Date().getFullYear()} Фаворит</span>
             <Link href="/privacy">Политика конфиденциальности</Link>
             <Link href="/consent">Обработка персональных данных</Link>
             <CookieSettings />

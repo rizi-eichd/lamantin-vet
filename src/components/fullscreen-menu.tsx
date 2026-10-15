@@ -13,8 +13,8 @@ import styles from "./fullscreen-menu.module.css";
 
 const photos = [
   { src: animalPhotos.menu.src, position: animalPhotos.menu.position },
-  { src: "/images/zooprofi-entrance.webp", position: "50% 50%" },
-  { src: "/images/zooprofi-reception.webp", position: "50% 50%" },
+  { src: "/images/favorit-entrance.webp", position: "50% 50%" },
+  { src: "/images/favorit-cat.webp", position: "50% 50%" },
 ] as const;
 const linkPhotos = [0, 0, 2, 1, 1, 0, 1];
 
@@ -126,7 +126,7 @@ export function FullscreenMenu() {
         >
           <Dialog.Title className="sr-only">Навигация по сайту</Dialog.Title>
           <Dialog.Description className="sr-only">
-            Ветеринарная клиника в Мытищах
+            Ветеринарная клиника в Воронеже
           </Dialog.Description>
           <div className={styles.top}>
             <Dialog.Close asChild>
@@ -134,18 +134,18 @@ export function FullscreenMenu() {
                 href="/"
                 onNavigate={(event) => navigateAfterClose("/", event)}
                 className={styles.brand}
-                aria-label="Зоопрофи — главная"
+                aria-label="Фаворит — главная"
               >
                 <Image
-                  src="/images/zooprofi-logo.png"
-                  width={748}
-                  height={748}
+                  src="/images/favorit-logo.svg"
+                  width={64}
+                  height={64}
                   sizes="44px"
                   alt=""
                 />
                 <span>
                   {clinic.name}
-                  <small>ВЕТЕРИНАРНЫЙ ЦЕНТР</small>
+                  <small>ВЕТЕРИНАРНАЯ КЛИНИКА</small>
                 </span>
               </Link>
             </Dialog.Close>
@@ -215,7 +215,7 @@ export function FullscreenMenu() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Мы на Яндекс Картах <ArrowUpRight size={15} />
+                    Мы на 2ГИС <ArrowUpRight size={15} />
                   </a>
                 </div>
               </div>

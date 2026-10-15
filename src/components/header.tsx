@@ -7,19 +7,19 @@ import { Button } from "./ui/button";
 import { FullscreenMenu } from "./fullscreen-menu";
 export function Logo() {
   return (
-    <Link href="/" className="logo" aria-label="Зоопрофи — главная">
+    <Link href="/" className="logo" aria-label="Фаворит — главная">
       <span className="logo-mark">
         <Image
-          src="/images/zooprofi-logo.png"
+          src="/images/favorit-logo.svg"
           alt=""
-          width={748}
-          height={748}
+          width={64}
+          height={64}
           sizes="(max-width: 760px) 44px, 56px"
         />
       </span>
       <span>
         {clinic.name}
-        <small>ВЕТЕРИНАРНЫЙ ЦЕНТР</small>
+        <small>ВЕТЕРИНАРНАЯ КЛИНИКА</small>
       </span>
     </Link>
   );
@@ -29,8 +29,8 @@ export function Header() {
     <>
       <div className="topbar">
         <div className="container">
-          <span>Мытищи · Троицкая, 9А</span>
-          <span>Клиника · Ветаптека · Зоотовары</span>
+          <span>{clinic.city} · {clinic.shortAddress}</span>
+          <span>Ветеринарная клиника · По предварительной записи</span>
         </div>
       </div>
       <header className="header">

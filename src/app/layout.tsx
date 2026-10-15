@@ -16,11 +16,11 @@ import "@fontsource/nunito-sans/700.css";
 export const metadata: Metadata = {
   metadataBase: new URL(clinic.siteUrl),
   title: {
-    default: "Зоопрофи — ветеринарная клиника в Мытищах",
-    template: "%s | Зоопрофи",
+    default: "Фаворит — ветеринарная клиника в Воронеже",
+    template: "%s | Фаворит",
   },
   description:
-    "Ветеринарная клиника, ветаптека и зоотовары в Мытищах. Троицкая, 9А. Узнайте об услугах и оставьте заявку на приём: +7 (498) 602-97-93.",
+    "Ветеринарная клиника в Воронеже. 45 Стрелковой Дивизии, 48. Узнайте об услугах и оставьте заявку на приём: +7 (473) 290-46-84.",
   robots: {
     index: process.env.SITE_INDEXABLE === "true",
     follow: process.env.SITE_INDEXABLE === "true",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: clinic.name,
-    title: "Зоопрофи — клиника в Мытищах",
-    description: "Ветеринарная помощь в Мытищах. Троицкая, 9А.",
+    title: "Фаворит — клиника в Воронеже",
+    description: "Ветеринарная помощь в Воронеже. 45 Стрелковой Дивизии, 48.",
     images: sharedOpenGraph.images,
   },
 };
