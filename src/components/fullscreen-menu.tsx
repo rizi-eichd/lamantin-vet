@@ -137,9 +137,9 @@ export function FullscreenMenu() {
                 aria-label="Ламантин — главная"
               >
                 <Image
-                  src="/images/lamantin-logo.svg"
-                  width={64}
-                  height={64}
+                  src="/images/lamantin-logo.png"
+                  width={1024}
+                  height={1024}
                   sizes="44px"
                   alt=""
                 />
