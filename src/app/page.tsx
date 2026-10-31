@@ -3,17 +3,9 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   ArrowRight,
-  ChevronDown,
-  PawPrint,
-  Heart,
   MapPin,
   Phone,
   Clock3,
-  Check,
-  MessageCircle,
-  Leaf,
-  ShoppingBag,
-  UserRound,
   Quote,
 } from "lucide-react";
 import { clinic } from "@/data/contacts";
@@ -23,42 +15,61 @@ import { doctors } from "@/data/team";
 import { reviews } from "@/data/reviews";
 import { faq } from "@/data/faq";
 import { Button } from "@/components/ui/button";
-import { HomeMotion, HomeReveal as Reveal } from "@/components/home-motion";
-import styles from "./home.module.css";
 import { ServiceIcon } from "@/components/service-icon";
 import { PriceList } from "@/components/price-list";
 import { BookingForm } from "@/components/booking-form";
+import { LeafMark } from "@/components/brand";
+import styles from "./home.module.css";
 import type { Metadata } from "next";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
-const benefits = [
+const steps = [
   {
-    icon: Heart,
     title: "Выберите услугу",
     text: "Откройте описание: что входит в приём и что уточнить перед визитом.",
   },
   {
-    icon: Leaf,
     title: "Уточните стоимость",
     text: "Позвоните администратору, чтобы узнать цену и доступность процедуры.",
   },
   {
-    icon: MessageCircle,
     title: "Согласуйте время",
     text: "Укажите желаемые дату и время в заявке. Дождитесь подтверждения клиники.",
   },
   {
-    icon: ShoppingBag,
-    title: "Постройте маршрут",
-    text: "Посмотрите фото здания и постройте маршрут: Октябрьская набережная, 34, к. 4, стр. 1.",
+    title: "Приезжайте",
+    text: `Возьмите ветеринарный паспорт. Адрес: ${clinic.city}, ${clinic.address}.`,
   },
 ];
+
 const serviceGroups = [...new Set(activeServices.map((s) => s.category))].map(
   (category) => ({
     category,
     services: activeServices.filter((s) => s.category === category),
   }),
 );
+
+/** Parallel arcs that meet at both ends, like the veins of a plantain leaf. */
+function Veins({ className }: { className: string }) {
+  const arcs = [-300, -210, -130, -60, 0, 60, 130, 210, 300];
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+      focusable="false"
+    >
+      {arcs.map((bend, i) => (
+        <path
+          key={bend}
+          d={`M500 1060 C${500 + bend} 760 ${500 + bend} 240 500 -60`}
+          style={{ animationDelay: `${120 + Math.abs(i - 4) * 90}ms` }}
+        />
+      ))}
+    </svg>
+  );
+}
 
 export default function Home() {
   const jsonLd = {
@@ -74,10 +85,9 @@ export default function Home() {
       addressRegion: clinic.region,
       addressCountry: "RU",
     },
-    hasMap: clinic.maps,
     openingHours: clinic.openingHours,
-    image: `${clinic.siteUrl}/images/lamantin-building.webp`,
   };
+  const verifiedReviews = reviews.filter((r) => r.verified);
   return (
     <>
       <script
@@ -86,254 +96,179 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <HomeMotion className={styles.home}>
+      <div className={styles.home}>
         <section className={styles.hero}>
-          <div className="container">
-            <div className={styles.coverHeading}>
+          <Veins className={styles.heroVeins} />
+          <div className={`container ${styles.heroGrid}`}>
+            <div className={styles.heroCopy}>
               <h1 className={styles.heroTitle}>
-                <span>{clinic.name}</span>
+                {clinic.name}
+                <span className="sr-only">
+                  {" "}
+                  — {clinic.descriptor.toLowerCase()} в Санкт-Петербурге
+                </span>
               </h1>
-              <p className={styles.coverPurpose}>
-                <span>Ветеринарная клиника</span> <span>в Санкт-Петербурге</span>
+              <p className={styles.heroLead}>
+                Ветеринарная клиника в Санкт-Петербурге. Осмотр, прививки,
+                УЗИ, хирургия и уход — бережно и без лишней спешки.
               </p>
+              <div className={styles.heroActions}>
+                <Button asChild variant="sprout">
+                  <Link href="/booking">
+                    Записаться на приём <ArrowUpRight size={20} />
+                  </Link>
+                </Button>
+                <a className={styles.heroPhone} href={clinic.phoneHref}>
+                  <Phone size={18} />
+                  {clinic.phone}
+                </a>
+              </div>
             </div>
-            <div className={styles.heroStage}>
-              <figure className={styles.heroPhoto}>
+            <div className={styles.heroVisual}>
+              <figure className={`${styles.leafFrame} ${styles.heroPhoto}`}>
                 <Image
                   src={animalPhotos.hero.src}
                   alt={animalPhotos.hero.alt}
-                  style={{ objectPosition: animalPhotos.hero.position }}
+                  style={{ objectPosition: "74% 42%" }}
                   fill
                   priority
-                  sizes="(max-width:760px) 100vw, 90vw"
+                  sizes="(max-width:760px) 92vw, 46vw"
                 />
-                <figcaption>
-                  Фото: {animalPhotos.hero.author} / Pexels
-                </figcaption>
               </figure>
+              <figure className={`${styles.leafFrame} ${styles.heroPhotoSmall}`}>
+                <Image
+                  src={animalPhotos.resting.src}
+                  alt={animalPhotos.resting.alt}
+                  style={{ objectPosition: animalPhotos.resting.position }}
+                  fill
+                  sizes="(max-width:760px) 40vw, 16vw"
+                />
+              </figure>
+              <span className={styles.heroSeal} aria-hidden="true">
+                <LeafMark size={44} />
+              </span>
             </div>
-            <div className={styles.heroText}>
-              <p>
-                Оставьте заявку на осмотр, вакцинацию или диагностику. Клиника
-                находится в Санкт-Петербурге, на Октябрьской набережной, 34, к. 4, стр. 1.
-              </p>
-              <div className={styles.heroActions}>
-                <Button asChild>
-                  <Link href="/booking">
-                    Оставить заявку <ArrowUpRight size={20} />
-                  </Link>
-                </Button>
-                <a className={styles.heroServiceLink} href="#services">
-                  Выбрать услугу <ArrowRight size={18} />
-                </a>
-              </div>
-              <p className={styles.confirmation}>
-                После отправки заявки <br />
-                <strong>администратор согласует время приёма.</strong>
-              </p>
-            </div>
-            <div className={styles.heroFoot}>
-              <a href="#contacts">
-                <MapPin size={17} />
-                <span>
-                  Клиника <strong>Октябрьская наб., 34, к. 4, стр. 1</strong>
-                </span>
-              </a>
-              <a
-                href={animalPhotos.hero.source}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Автор фотографии · Pexels <ArrowUpRight size={14} />
-              </a>
-              <span>ВЕТЕРИНАРНАЯ КЛИНИКА В САНКТ-ПЕТЕРБУРГЕ</span>
-            </div>
+            <dl className={styles.heroFacts}>
+                <div>
+                  <dt>
+                    <Clock3 size={16} aria-hidden="true" />
+                    Часы работы
+                  </dt>
+                  <dd>{clinic.hoursShort}</dd>
+                </div>
+                <div>
+                  <dt>
+                    <MapPin size={16} aria-hidden="true" />
+                    Адрес
+                  </dt>
+                  <dd>
+                    {clinic.city}, {clinic.shortAddress}
+                  </dd>
+                </div>
+              </dl>
           </div>
         </section>
-        <div className="care-strip">
+
+        <section id="services" className={styles.services}>
           <div className="container">
-            <span>
-              <StethoscopeMark />
-              Ветеринарная помощь
-            </span>
-            <i />
-            <span>
-              <ShoppingBag size={20} />
-              Запись на приём
-            </span>
-            <i />
-            <span>
-              <MapPin size={20} />
-              Октябрьская наб., 34, к. 4, стр. 1
-            </span>
-            <i />
-            <a href={clinic.phoneHref}>
-              <Phone size={20} />
-              {clinic.phone}
-            </a>
-          </div>
-        </div>
-        <section id="services" className={styles.servicesSection}>
-          <Reveal className="container">
-            <div className="section-heading">
-              <div>
-                <h2>
-                  Выберите услугу
-                  <br />
-                  для вашего питомца
-                </h2>
-                <span className="section-context">
-                  ПРИЁМ, ДИАГНОСТИКА И ПРОФИЛАКТИКА
-                </span>
-              </div>
+            <div className={styles.sectionHead}>
+              <h2>Чем поможем питомцу</h2>
               <p>
-                Откройте описание услуги, чтобы узнать порядок приёма и
-                подготовку. Стоимость и доступность уточните по телефону.
+                Откройте услугу, чтобы узнать порядок приёма и подготовку.
+                Стоимость и доступность уточните по телефону.
               </p>
             </div>
-            <div className={styles.serviceCatalogue}>
-              {serviceGroups.map((group, groupIndex) => (
-                <details
-                  className={styles.serviceGroup}
-                  key={group.category}
-                  name="service-categories"
-                  open={groupIndex === 0}
-                >
-                  <summary>
-                    <h3>{group.category}</h3>
-                    <ChevronDown size={26} aria-hidden="true" />
-                  </summary>
-                  <div className={styles.serviceEntries}>
+            <div className={styles.serviceGrid}>
+              {serviceGroups.map((group) => (
+                <div className={styles.serviceGroup} key={group.category}>
+                  <h3>{group.category}</h3>
+                  <ul>
                     {group.services.map((s) => (
-                      <Link
-                        href={`/services/${s.slug}`}
-                        key={s.slug}
-                        className={styles.serviceEntry}
-                      >
-                        <ServiceIcon name={s.icon} size={23} />
-                        <div>
-                          <h3>{s.title}</h3>
-                          <p>{s.short}</p>
-                          <span>Подробнее об услуге</span>
-                        </div>
-                        <ArrowUpRight size={20} aria-hidden="true" />
-                      </Link>
+                      <li key={s.slug}>
+                        <Link
+                          href={`/services/${s.slug}`}
+                          className={styles.serviceRow}
+                        >
+                          <span className={styles.serviceIcon}>
+                            <ServiceIcon name={s.icon} size={22} />
+                          </span>
+                          <span className={styles.serviceText}>
+                            <strong>{s.title}</strong>
+                            <span>{s.short}</span>
+                          </span>
+                          <ArrowUpRight
+                            className={styles.serviceArrow}
+                            size={20}
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      </li>
                     ))}
-                  </div>
-                </details>
+                  </ul>
+                </div>
               ))}
             </div>
-          </Reveal>
-        </section>
-        <section id="about" className={styles.aboutSpread}>
-          <div className="container">
-            <div className={styles.aboutHeading}>
-              <h2>
-                Ветеринарная клиника
-                <br />
-                на Октябрьской набережной, 34, к. 4, стр. 1
-              </h2>
-              <span className="section-context">О КЛИНИКЕ</span>
-            </div>
-            <div className={styles.clinicPhotos}>
-              <figure>
-                <Image
-                  src="/images/lamantin-building.webp"
-                  alt="Здание ЖК Pulse на набережной — Октябрьская набережная, 34, к. 4, стр. 1"
-                  fill
-                  sizes="(max-width:760px) 90vw, 65vw"
-                />
-                <figcaption>
-                  ЖК Pulse на набережной <strong>Октябрьская наб., 34, к. 4, стр. 1</strong>
-                </figcaption>
-              </figure>
-              <figure>
-                <Image
-                  src="/images/lamantin-reception.webp"
-                  alt="Ресепшен клиники Ламантин — фотография из 2ГИС"
-                  fill
-                  sizes="(max-width:760px) 90vw, 30vw"
-                />
-              </figure>
-            </div>
-            <div className={styles.aboutDetails}>
-              <div>
-                <p>
-                  В клинике «Ламантин» можно записаться на ветеринарный приём.
-                  Клиника находится в Санкт-Петербурге, на Октябрьской набережной, 34, к. 4, стр. 1.
-                </p>
-                <p>
-                  Расписание работы указано в контактах. Перед поездкой уточните
-                  возможность приёма. В контактах есть телефон, фото здания и
-                  ссылка на маршрут.
-                </p>
-              </div>
-              <div>
-                <ul className="check-list">
-                  <li>
-                    <Check size={18} />
-                    Ветеринарная клиника
-                  </li>
-                  <li>
-                    <Check size={18} />
-                    УЗИ животных
-                  </li>
-                  <li>
-                    <Check size={18} />
-                    Запись по телефону
-                  </li>
-                </ul>
-                <Button asChild variant="outline">
-                  <a href="#contacts">
-                    Перейти к контактам <ArrowUpRight size={18} />
-                  </a>
-                </Button>
-              </div>
-            </div>
           </div>
         </section>
-        <section className={styles.visitSection}>
-          <div className="container">
-            <Reveal>
-              <div className="section-heading">
-                <div>
-                  <h2>
-                    От выбора услуги
-                    <br />
-                    до визита в клинику
-                  </h2>
-                  <span className="section-context">
-                    КАК СПЛАНИРОВАТЬ ВИЗИТ
-                  </span>
-                </div>
-              </div>
-              <div className="benefits-grid">
-                {benefits.map((b, i) => (
-                  <Reveal key={b.title} index={i} className={styles.visitStep}>
-                    <span className={styles.visitNumber} aria-hidden="true">
-                      0{i + 1}
-                    </span>
 
-                    <h3>{b.title}</h3>
-                    <p>{b.text}</p>
-                  </Reveal>
-                ))}
-              </div>
-            </Reveal>
+        <section id="visit" className={styles.visit}>
+          <div className="container">
+            <div className={styles.sectionHead}>
+              <h2>Как записаться</h2>
+              <p>
+                Заявка на сайте — это запрос. Время приёма подтверждает
+                администратор клиники.
+              </p>
+            </div>
+            <ol className={styles.steps}>
+              {steps.map((step, i) => (
+                <li key={step.title}>
+                  <span className={styles.stepNumber} aria-hidden="true">
+                    {i + 1}
+                  </span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <div className={styles.visitActions}>
+              <Button asChild>
+                <Link href="/booking">
+                  Оставить заявку <ArrowUpRight size={20} />
+                </Link>
+              </Button>
+              <a className="text-link" href={clinic.phoneHref}>
+                или позвоните: {clinic.phone}
+              </a>
+            </div>
           </div>
         </section>
-        <div className={`container ${styles.trustLayout}`}>
-          <section id="team" className="section team-section">
+
+        <section id="prices" className={styles.prices}>
+          <div className={`container ${styles.pricesGrid}`}>
+            <div className={styles.pricesIntro}>
+              <h2>Услуги и стоимость</h2>
+              <p>
+                Цены на сайте пока не опубликованы. Позвоните — администратор
+                назовёт стоимость выбранной услуги.
+              </p>
+              <a className="text-link" href={clinic.phoneHref}>
+                <Phone size={17} />
+                {clinic.phone}
+              </a>
+            </div>
+            <PriceList />
+          </div>
+        </section>
+
+        {(doctors.length > 0 || verifiedReviews.length > 0) && (
+          <section id="team" className={styles.trust}>
             <div className="container">
-              <Reveal>
-                <div className="section-heading">
-                  <div>
+              {doctors.length > 0 && (
+                <>
+                  <div className={styles.sectionHead}>
                     <h2>Врачи клиники</h2>
-                    <span className="section-context">СПЕЦИАЛИСТЫ</span>
                   </div>
-                  <p>Уточните у администратора, кто ведёт нужный вам приём.</p>
-                </div>
-                {doctors.length ? (
                   <div className="team-grid">
                     {doctors.map((d) => (
                       <article className="doctor-card" key={d.id}>
@@ -346,135 +281,31 @@ export default function Home() {
                         <h3>{d.name}</h3>
                         <span>{d.specialty}</span>
                         <p>{d.bio}</p>
-                        <Button asChild>
-                          <Link href="/booking">Записаться</Link>
-                        </Button>
                       </article>
                     ))}
                   </div>
-                ) : (
-                  <div className="team-placeholder">
-                    <span className="team-icon">
-                      <UserRound size={36} strokeWidth={1.4} />
-                    </span>
-                    <div>
-                      <h3>Уточните специалиста по телефону</h3>
-                      <p>
-                        Имена и расписание врачей пока не опубликованы.
-                        Позвоните администратору, чтобы выбрать специалиста и
-                        время.
-                      </p>
-                    </div>
-                    <Button asChild variant="outline">
-                      <a href={clinic.phoneHref}>
-                        Уточнить по телефону <Phone size={17} />
-                      </a>
-                    </Button>
-                  </div>
-                )}
-              </Reveal>
-            </div>
-          </section>
-          <section id="reviews" className="section container">
-            <Reveal>
-              <div className="section-heading">
-                <div>
-                  <h2>Отзывы посетителей</h2>
-                  <span className="section-context">2ГИС</span>
-                </div>
-                <Button asChild variant="outline">
-                  <a
-                    href={clinic.reviews}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Отзывы в 2ГИС <ArrowUpRight size={18} />
-                  </a>
-                </Button>
-              </div>
-              {reviews.filter((r) => r.verified).length ? (
-                <div className="reviews-grid">
-                  {reviews
-                    .filter((r) => r.verified)
-                    .map((r) => (
-                      <article className="review-card" key={r.id}>
-                        <Quote />
-                        <p>{r.text}</p>
-                        <strong>{r.author}</strong>
-                        <small>{r.date}</small>
-                        <a
-                          href={r.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Источник отзыва
-                        </a>
-                      </article>
-                    ))}
-                </div>
-              ) : (
-                <div className="review-invitation">
-                  <Quote size={44} strokeWidth={1.2} />
-                  <div>
-                    <h3>Откройте отзывы в карточке клиники</h3>
-                    <p>
-                      Ссылка ведёт в 2ГИС. Там можно прочитать отзывы
-                      владельцев питомцев и посмотреть их оценки.
-                    </p>
-                  </div>
-                  <span className="review-brand">
-                    2<span>ГИС</span>
-                    <ArrowUpRight size={24} />
-                  </span>
+                </>
+              )}
+              {verifiedReviews.length > 0 && (
+                <div id="reviews" className="reviews-grid">
+                  {verifiedReviews.map((r) => (
+                    <article className="review-card" key={r.id}>
+                      <Quote aria-hidden="true" />
+                      <p>{r.text}</p>
+                      <strong>{r.author}</strong>
+                      <small>{r.date}</small>
+                    </article>
+                  ))}
                 </div>
               )}
-            </Reveal>
+            </div>
           </section>
-        </div>
-        <section id="prices" className={styles.pricesSection}>
-          <Reveal className="container">
-            <div className="section-heading">
-              <div>
-                <h2>Услуги и стоимость</h2>
-                <span className="section-context">СТОИМОСТЬ ПРИЁМА</span>
-              </div>
-              <p>
-                Позвоните, чтобы узнать цену выбранной услуги. Суммы на сайте
-                пока не опубликованы.
-              </p>
-            </div>
-            <PriceList />
-          </Reveal>
-        </section>
-        <section className={`appointment-banner ${styles.appointmentPoster}`}>
-          <div className="container">
-            <div>
-              <h2>Выберите услугу и время</h2>
-              <span className="section-context">ЗАЯВКА НА ПРИЁМ</span>
-              <p>
-                Форма отправляет заявку администратору. Время приёма нужно
-                согласовать с клиникой.
-              </p>
-              <Button asChild>
-                <Link href="/booking">
-                  Оставить заявку <ArrowUpRight size={20} />
-                </Link>
-              </Button>
-            </div>
-            <div className="banner-paw" aria-hidden="true">
-              <PawPrint size={170} strokeWidth={1} />
-            </div>
-          </div>
-        </section>
-        <section className="faq-section section">
-          <div className="container faq-grid">
-            <div>
-              <h2>
-                Вопросы
-                <br />
-                перед приёмом
-              </h2>
-              <span className="section-context">ЗАПИСЬ И ПОДГОТОВКА</span>
+        )}
+
+        <section id="faq" className={styles.faq}>
+          <div className={`container ${styles.faqGrid}`}>
+            <div className={styles.faqIntro}>
+              <h2>Вопросы перед приёмом</h2>
               <p>
                 Не нашли ответ? Позвоните, чтобы уточнить услугу или время
                 приёма.
@@ -488,7 +319,7 @@ export default function Home() {
                 <details key={f.question}>
                   <summary>
                     {f.question}
-                    <span className="faq-plus">+</span>
+                    <span className="faq-toggle" aria-hidden="true" />
                   </summary>
                   <p>{f.answer}</p>
                 </details>
@@ -496,106 +327,54 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="contacts" className="section container">
-          <div className="section-heading">
-            <div>
-              <h2>
-                Как добраться
-                <br />
-                до клиники
-              </h2>
-              <span className="section-context">АДРЕС И ЧАСЫ РАБОТЫ</span>
-            </div>
-            <p>
-              Санкт-Петербург, Октябрьская набережная, 34, к. 4, стр. 1.
-              <br />
-              Перед поездкой уточните расписание и согласуйте приём.
-            </p>
-          </div>
-          <div className={styles.contactSpread}>
-            <div className="contact-photo">
-              <Image
-                src="/images/lamantin-building.webp"
-                alt="Здание — Октябрьская наб., 34, к. 4, стр. 1"
-                fill
-                sizes="(max-width:760px) 95vw, 55vw"
-              />
-              <span>
-                <MapPin size={18} />
-                Клиника в ЖК Pulse на набережной
-              </span>
-            </div>
-            <div className="contact-info">
-              <div>
-                <MapPin />
-                <span>
-                  Наш адрес
-                  <strong>
+
+        <section id="contacts" className={styles.contact}>
+          <Veins className={styles.contactVeins} />
+          <div className={`container ${styles.contactGrid}`} id="request">
+            <div className={styles.contactIntro}>
+              <h2>Запишитесь на приём</h2>
+              <p>
+                Выберите услугу, укажите телефон и желаемое время. Администратор
+                перезвонит и подтвердит запись.
+              </p>
+              <ul className={styles.contactList}>
+                <li>
+                  <MapPin aria-hidden="true" />
+                  <span>
+                    <small>Адрес</small>
                     {clinic.city}, {clinic.address}
-                  </strong>
-                </span>
-              </div>
-              <div>
-                <Phone />
-                <span>
-                  Звоните нам<a href={clinic.phoneHref}>{clinic.phone}</a>
-                </span>
-              </div>
-              <div>
-                <Clock3 />
-                <span>
-                  Часы работы
-                  <strong>
-                    {clinic.hours || "Уточните по телефону перед визитом"}
-                  </strong>
-                </span>
-              </div>
-              <Button asChild variant="secondary">
-                <a
-                  href={clinic.route}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Построить маршрут <ArrowUpRight size={18} />
-                </a>
-              </Button>
+                  </span>
+                </li>
+                <li>
+                  <Phone aria-hidden="true" />
+                  <span>
+                    <small>Телефон</small>
+                    <a href={clinic.phoneHref}>{clinic.phone}</a>
+                  </span>
+                </li>
+                <li>
+                  <Clock3 aria-hidden="true" />
+                  <span>
+                    <small>Часы работы</small>
+                    {clinic.hours}
+                  </span>
+                </li>
+              </ul>
               <a
-                className="text-link"
-                href={clinic.maps}
+                className={styles.routeLink}
+                href={clinic.route}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Открыть 2ГИС <ArrowUpRight size={17} />
+                Построить маршрут <ArrowRight size={18} />
               </a>
-            </div>
-          </div>
-        </section>
-        <section className={styles.bookingDesk} id="request">
-          <div className="contact-form-grid container">
-            <div>
-              <h2>
-                Укажите услугу
-                <br />и время приёма
-              </h2>
-              <span className="section-context">ЗАЯВКА НА ПРИЁМ</span>
-              <p>
-                Выберите услугу, укажите телефон и желаемое время. После
-                получения заявки администратор свяжется с вами для подтверждения
-                записи.
-              </p>
-              <span className="contact-form-paw">
-                <PawPrint size={100} strokeWidth={1} />
-              </span>
             </div>
             <div className={styles.formSheet}>
               <BookingForm />
             </div>
           </div>
         </section>
-      </HomeMotion>
+      </div>
     </>
   );
-}
-function StethoscopeMark() {
-  return <ServiceIcon name="Stethoscope" size={20} />;
 }

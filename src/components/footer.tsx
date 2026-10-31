@@ -1,20 +1,19 @@
 import Link from "next/link";
 import { ArrowUpRight, Phone } from "lucide-react";
-import { Logo } from "./header";
+import { Logo } from "./brand";
 import { clinic, navigation } from "@/data/contacts";
-import { FooterSurface } from "./footer-surface";
 import { CookieSettings } from "./cookie-notice";
 export function Footer() {
   return (
     <>
-      <FooterSurface>
+      <footer className="footer">
         <div className="container">
           <div className="footer-top">
             <div>
               <Logo />
               <p>
-                Ветеринарная клиника
-                <br />в Санкт-Петербурге.
+                Ветеринарная клиника в Санкт-Петербурге. Приём по
+                предварительной записи.
               </p>
             </div>
             <nav aria-label="Навигация в подвале">
@@ -23,32 +22,36 @@ export function Footer() {
                   {name}
                 </Link>
               ))}
+              <Link href="/booking">Запись на приём</Link>
             </nav>
             <div className="footer-contact">
               <a href={clinic.phoneHref}>{clinic.phone}</a>
               <p>
                 {clinic.city}, {clinic.address}
               </p>
-              <a href={clinic.maps} target="_blank" rel="noopener noreferrer">
-                Мы на 2ГИС <ArrowUpRight size={16} />
-              </a>
+              <p>{clinic.hours}</p>
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Ламантин</span>
+            <span>
+              © {new Date().getFullYear()} {clinic.name}
+            </span>
             <Link href="/privacy">Политика конфиденциальности</Link>
             <Link href="/consent">Обработка персональных данных</Link>
             <CookieSettings />
           </div>
+          <div className="footer-wordmark" aria-hidden="true">
+            {clinic.name}
+          </div>
         </div>
-      </FooterSurface>
+      </footer>
       <div className="mobile-actions">
         <a href={clinic.phoneHref}>
-          <Phone size={18} />
+          <Phone size={18} aria-hidden="true" />
           Позвонить
         </a>
         <Link href="/booking">
-          Заявка на приём <ArrowUpRight size={18} />
+          Записаться <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
       </div>
     </>

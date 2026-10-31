@@ -5,22 +5,24 @@ import { CookieNotice } from "@/components/cookie-notice";
 import { clinic } from "@/data/contacts";
 import { sharedOpenGraph } from "@/lib/seo";
 import "./globals.css";
-import "@fontsource/manrope/400.css";
-import "@fontsource/manrope/500.css";
-import "@fontsource/manrope/600.css";
-import "@fontsource/manrope/700.css";
-import "@fontsource/nunito-sans/400.css";
-import "@fontsource/nunito-sans/500.css";
-import "@fontsource/nunito-sans/600.css";
-import "@fontsource/nunito-sans/700.css";
+import "@fontsource/onest/cyrillic-400.css";
+import "@fontsource/onest/cyrillic-500.css";
+import "@fontsource/onest/cyrillic-600.css";
+import "@fontsource/onest/latin-400.css";
+import "@fontsource/onest/latin-500.css";
+import "@fontsource/onest/latin-600.css";
+import "@fontsource/unbounded/cyrillic-500.css";
+import "@fontsource/unbounded/cyrillic-600.css";
+import "@fontsource/unbounded/latin-500.css";
+import "@fontsource/unbounded/latin-600.css";
 export const metadata: Metadata = {
   metadataBase: new URL(clinic.siteUrl),
   title: {
-    default: "Ламантин — ветеринарная клиника в Санкт-Петербурге",
-    template: "%s | Ламантин",
+    default: "Подорожник — ветеринарная клиника в Санкт-Петербурге",
+    template: "%s | Подорожник",
   },
   description:
-    "Ветеринарная клиника в Санкт-Петербурге. Октябрьская наб., 34, к. 4, стр. 1. Узнайте об услугах и оставьте заявку на приём: +7 (812) 240-51-14.",
+    `Ветеринарная клиника «Подорожник» в Санкт-Петербурге. Осмотр, прививки, УЗИ, хирургия и уход. Заявка на приём онлайн или по телефону ${clinic.phone}.`,
   robots: {
     index: process.env.SITE_INDEXABLE === "true",
     follow: process.env.SITE_INDEXABLE === "true",
@@ -29,8 +31,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: clinic.name,
-    title: "Ламантин — клиника в Санкт-Петербурге",
-    description: "Ветеринарная помощь в Санкт-Петербурге. Октябрьская наб., 34, к. 4, стр. 1.",
+    title: "Подорожник — ветеринарная клиника в Санкт-Петербурге",
+    description: "Ветеринарная помощь в Санкт-Петербурге: осмотр, прививки, УЗИ, хирургия и уход.",
     images: sharedOpenGraph.images,
   },
 };

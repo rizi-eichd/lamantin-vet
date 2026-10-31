@@ -8,6 +8,7 @@ const buttonVariants = cva("btn", {
       default: "btn-primary",
       outline: "btn-outline",
       secondary: "btn-green",
+      sprout: "btn-sprout",
     },
     size: { default: "", small: "btn-small" },
   },

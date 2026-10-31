@@ -23,11 +23,11 @@ export async function generateMetadata({
   if (!s) return { title: "Услуга не найдена" };
   return {
     title: `${s.title} в Санкт-Петербурге`,
-    description: `${s.short} Клиника Ламантин, Октябрьская наб., 34, к. 4, стр. 1. Доступность и стоимость уточняйте по телефону.`,
+    description: `${s.short} Клиника «${clinic.name}», ${clinic.city}. Доступность и стоимость уточняйте по телефону.`,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: {
       ...sharedOpenGraph,
-      title: `${s.title} — Ламантин`,
+      title: `${s.title} — ${clinic.name}`,
       description: s.short,
       url: `/services/${s.slug}`,
     },
@@ -43,20 +43,25 @@ export default async function ServicePage({
   if (!s) notFound();
   const price = prices.find((p) => p.serviceSlug === slug)?.price;
   const photo = servicePhotos[slug] ?? animalPhotos.consultation;
+  const related = activeServices.filter(
+    (x) => x.category === s.category && x.slug !== slug,
+  );
   return (
     <div className="container">
       <div className="page-intro service-intro">
         <nav className="breadcrumb" aria-label="Хлебные крошки">
           <Link href="/">Главная</Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <Link href="/#services">Услуги</Link>
-          <span>/</span>
-          <span>{s.title}</span>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{s.title}</span>
         </nav>
         <div className="service-intro-split">
           <div>
+            <span className="service-badge">
+              <ServiceIcon name={s.icon} size={30} />
+            </span>
             <h1>{s.title}</h1>
-            <span className="section-context">{s.category.toUpperCase()}</span>
             <p>{s.short}</p>
           </div>
           <div className="service-intro-photo">
@@ -89,43 +94,41 @@ export default async function ServicePage({
             {s.availability === "confirm" &&
               "Наличие этой услуги необходимо подтвердить по телефону."}
           </div>
-          <h2>Услуги в этой категории</h2>
-          <div className="check-list">
-            {activeServices
-              .filter((x) => x.category === s.category && x.slug !== slug)
-              .map((x) => (
-                <Link
-                  href={`/services/${x.slug}`}
-                  className="text-link"
-                  key={x.slug}
-                >
-                  {x.title}
-                  <ArrowUpRight size={16} />
-                </Link>
-              ))}
-          </div>
+          {related.length > 0 && (
+            <>
+              <h2>Ещё в разделе «{s.category}»</h2>
+              <div className="related-links">
+                {related.map((x) => (
+                  <Link href={`/services/${x.slug}`} key={x.slug}>
+                    {x.title}
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
         </article>
         <aside className="service-side">
-          <ServiceIcon name={s.icon} size={42} />
-          <h3>Заявка на эту услугу</h3>
+          <h2>Записаться на эту услугу</h2>
+          <div className="price-line">
+            <span>Стоимость</span>
+            <span>
+              {price == null
+                ? "по телефону"
+                : `${price.toLocaleString("ru-RU")} ₽`}
+            </span>
+          </div>
           <p>
-            Стоимость:{" "}
-            {price == null
-              ? "уточняйте по телефону"
-              : `${price.toLocaleString("ru-RU")} ₽`}
-            .
+            В форме эта услуга будет выбрана автоматически. Укажите телефон и
+            желаемое время приёма.
           </p>
-          <p>
-            Перейдите к форме: эта услуга будет выбрана автоматически. Укажите
-            телефон и желаемое время приёма.
-          </p>
-          <Button asChild>
+          <Button asChild variant="sprout">
             <Link href={`/booking?service=${s.slug}`}>
               Оставить заявку <ArrowUpRight size={18} />
             </Link>
           </Button>
           <a className="text-link" href={clinic.phoneHref}>
-            <Phone size={16} />
+            <Phone size={16} aria-hidden="true" />
             {clinic.phone}
           </a>
         </aside>

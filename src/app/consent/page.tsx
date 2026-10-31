@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { clinic } from "@/data/contacts";
 export const metadata: Metadata = {
   title: "Согласие на обработку данных",
   robots: { index: false, follow: false },
@@ -37,7 +38,7 @@ export default function Consent() {
         <h2>Отзыв согласия</h2>
         <p>
           Порядок отзыва и контакт оператора: [указать до публикации]. Запись
-          также возможна по телефону +7 (812) 240-51-14.
+          также возможна по телефону {clinic.phone}.
         </p>
         <p>
           Дата версии: 11 октября 2026 года. Выбранное время приёма требует
