@@ -1,0 +1,35 @@
+2:"$Sreact.fragment"
+3:"/lamantin-vet/_next/static/chunks/33bkpx1xlsvn_.js"
+4:"/lamantin-vet/_next/static/chunks/3l95iqlalw1rx.js"
+5:"/lamantin-vet/_next/static/chunks/119ps7daps9hx.js"
+6:I[51977,["$3","$4","$5"],"default"]
+7:I[62959,["$3","$4","$5"],"default"]
+c:"/lamantin-vet/_next/static/chunks/3dt4gyzdv2oly.js"
+d:"/lamantin-vet/_next/static/chunks/2g8cz8k8_9tc0.js"
+e:I[8810,["$3","$4","$5","$c","$d"],""]
+f:I[67344,["$3","$4","$5","$c","$d"],"default"]
+11:I[57734,["$3","$4","$5","$c","$d"],"Image"]
+12:"$Sreact.suspense"
+13:"BookingQueryForm"
+14:I[50062,["$3","$4","$5","$c","$d"],"$13"]
+15:I[93967,["$3","$4","$5"],"OutletBoundary"]
+18:"ViewportBoundary"
+19:I[93967,["$3","$4","$5"],"$18"]
+1a:"MetadataBoundary"
+1b:I[93967,["$3","$4","$5"],"$1a"]
+1c:I[30865,["$3","$4","$5"],"IconMark"]
+9:X
+9:C
+a:X
+10:[["$","source",null,{"type":"image/webp","srcSet":"/lamantin-vet/images/animals/booking-cat-768.webp 768w, /lamantin-vet/images/animals/booking-cat-1280.webp 1280w, /lamantin-vet/images/animals/booking-cat-1920.webp 1920w, /lamantin-vet/images/animals/booking-cat-2560.webp 2560w, /lamantin-vet/images/animals/booking-cat-4k.webp 3840w","sizes":"(max-width:960px) 1px, 360px"}],["$","$L11",null,{"src":"/lamantin-vet/images/animals/booking-cat-4k.webp","alt":"Белая кошка с зелёными глазами в мягком дневном свете","style":{"objectPosition":"50% 42%"},"fill":true,"sizes":"(max-width:960px) 1px, 360px","unoptimized":true,"priority":false,"preload":false}]]
+b:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","div",null,{"className":"container","children":[["$","div",null,{"className":"page-intro","children":[["$","nav",null,{"className":"breadcrumb","aria-label":"Хлебные крошки","children":[["$","$Le",null,{"href":"/","children":"Главная"}],["$","span",null,{"aria-hidden":"true","children":"/"}],["$","span",null,{"aria-current":"page","children":"Запись на приём"}]]}],["$","h1",null,{"children":"Заявка на приём"}],["$","p",null,{"children":"Выберите услугу, укажите телефон и желаемое время. После получения заявки администратор свяжется с вами для подтверждения записи."}]]}],["$","div",null,{"className":"booking-page-grid","children":[["$","aside",null,{"className":"booking-aside","children":[["$","h2",null,{"children":"Как подтверждается запись"}],["$","ol",null,{"children":[["$","li",null,{"children":"Вы заполняете заявку"}],["$","li",null,{"children":"Администратор уточняет детали"}],["$","li",null,{"children":"Вы согласуете время приёма"}]]}],["$","p",null,{"children":"Выбранное время не считается забронированным до подтверждения клиникой. Нужна срочная помощь? Позвоните."}],["$","a",null,{"className":"text-link","href":"tel:+78120000000","children":[["$","$Lf",null,{"icon":{"name":"phone","size":24,"node":[["path",{"d":"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384","key":"9njp5v"}]]},"size":17,"aria-hidden":"true"}],"+7 (812) 000-00-00"]}],["$","div",null,{"className":"booking-aside-photo","children":["$","picture",null,{"children":"$10"}]}]]}],["$","div",null,{"className":"booking-sheet","children":["$","$12",null,{"fallback":["$","p",null,{"role":"status","children":"Загрузка формы…"}],"children":["$","$L14",null,{}]}]}]]}]]}],[["$","script","script-0",{"src":"/lamantin-vet/_next/static/chunks/3dt4gyzdv2oly.js","async":true}],["$","script","script-1",{"src":"/lamantin-vet/_next/static/chunks/2g8cz8k8_9tc0.js","async":true}]],["$","$L15",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$a"}}]]
+1:[["children",{"s":"booking","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}]}]]}],"p":"$@8","v":"$9","s":"$a"},"c":"$Qb"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Заявка на приём | Подорожник"}],["$","meta","1",{"name":"description","content":"Оставьте заявку в ветеринарную клинику «Подорожник» в Санкт-Петербурге. Администратор подтвердит услугу, дату и время."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"rel":"canonical","href":"https://rizi-eichd.github.io/lamantin-vet/booking/"}],["$","meta","4",{"property":"og:title","content":"Подорожник — ветеринарная клиника в Санкт-Петербурге"}],["$","meta","5",{"property":"og:description","content":"Ветеринарная помощь в Санкт-Петербурге: осмотр, прививки, УЗИ, хирургия и уход."}],["$","meta","6",{"property":"og:site_name","content":"Подорожник"}],["$","meta","7",{"property":"og:locale","content":"ru_RU"}],["$","meta","8",{"property":"og:image","content":"https://rizi-eichd.github.io/lamantin-vet/images/animals/hero-dog-4k.webp"}],["$","meta","9",{"property":"og:image:width","content":"3840"}],["$","meta","10",{"property":"og:image:height","content":"2847"}],["$","meta","11",{"property":"og:image:alt","content":"Золотистый ретривер на прогулке среди зелени"}],["$","meta","12",{"property":"og:type","content":"website"}],["$","meta","13",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","14",{"name":"twitter:title","content":"Подорожник — ветеринарная клиника в Санкт-Петербурге"}],["$","meta","15",{"name":"twitter:description","content":"Ветеринарная помощь в Санкт-Петербурге: осмотр, прививки, УЗИ, хирургия и уход."}],["$","meta","16",{"name":"twitter:image","content":"https://rizi-eichd.github.io/lamantin-vet/images/animals/hero-dog-4k.webp"}],["$","meta","17",{"name":"twitter:image:alt","content":"Золотистый ретривер на прогулке среди зелени"}],["$","meta","18",{"name":"twitter:image:width","content":"3840"}],["$","meta","19",{"name":"twitter:image:height","content":"2847"}],["$","link","20",{"rel":"icon","href":"/lamantin-vet/icon.svg?icon.1-txf26t_zgel.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1c","21",{}]]}]}],null]}],null]}],"p":"$@1d","v":null,"s":"$a"}},"a":"$@1e","u":"$@1f","b":"-7Y07Uiex12G_1cpiS0of"}
+16:null
+1f:true
+a:300
+a:C
+1e:0
+8:"$undefined"
+1d:"$undefined"
+17:"$undefined"
